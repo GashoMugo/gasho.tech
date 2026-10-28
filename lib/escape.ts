@@ -31,8 +31,16 @@ export function xmlCdata(value: unknown): string {
 /**
  * JSON for a `<script>` element. The HTML parser ends the script at the first
  * `</script`, so `<` is emitted as the JSON escape `\u003c`: the value parses
- * back unchanged, and stored text can no longer open or close a tag.
+ * back unchanged, and stored text can no longer open or close a tag. U+2028 and
+ * U+2029 are escaped for the same reason (legal in a JS string, not raw).
+ *
+ * This is the single serializer for every `<script type="application/ld+json">`
+ * sink — app/layout.tsx, app/blogs/[slug], app/projects/[slug], app/services/[slug].
  */
 export function safeJsonLd(value: unknown): string {
-  return JSON.stringify(value).replace(/</g, "\\u003c");
+  const json = JSON.stringify(value) ?? "null"
+  return json
+    .replace(/</g, "\\u003c")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029")
 }

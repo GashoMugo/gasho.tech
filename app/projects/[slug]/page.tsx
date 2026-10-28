@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ProjectLinks } from "@/components/projects/project-links"
+import { safeJsonLd } from "@/lib/escape"
 import {
   getProject,
   isLiveProject,
@@ -50,19 +51,6 @@ async function resolveProject(props: Props): Promise<Project | null> {
     return null
   }
   return project
-}
-
-/**
- * Serialize JSON-LD for a raw `<script>` sink. `JSON.stringify` does not escape `</script>`,
- * so a value containing it would close the tag and let the rest run as markup. `<` → `\u003c`
- * keeps the payload inert while remaining valid JSON for crawlers (the link fields are
- * data-authored, so this is defence in depth rather than a live hole).
- */
-function toJsonLd(schema: unknown): string {
-  return JSON.stringify(schema)
-    .replace(/</g, "\\u003c")
-    .replace(/\u2028/g, "\\u2028")
-    .replace(/\u2029/g, "\\u2029")
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -151,11 +139,11 @@ export default async function ProjectPage(props: Props) {
     <div className="pt-16">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: toJsonLd(projectSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(projectSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
       />
 
       {/* Breadcrumb */}

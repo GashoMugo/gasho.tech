@@ -181,7 +181,7 @@ const LINK_ARIA: Record<ProjectLinkKind, (title: string) => string> = {
  * dead one. Credentials in the authority (`https://user:pass@host`) are refused: they would
  * hand a password to anyone who clicks, and nothing here ever needs them. `<`, `>`, `"` and
  * the bidi control characters are refused too, so a URL-shaped string can never smuggle
- * markup into a sink that does not escape (JSON-LD is serialized via `toJsonLd()` as well).
+ * markup into a sink that does not escape (JSON-LD is serialized via `safeJsonLd()` as well).
  */
 export function isRenderableUrl(raw: string | undefined): boolean {
   const value = (raw ?? "").trim();
