@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test": "node --experimental-strip-types --no-warnings --test test/*.test.ts",
     "check:tier1-gate": "node scripts/check-tier1-gate.mjs",
-    "check:client-bundles": "node scripts/check-client-bundles.mjs"
+    "check:client-bundles": "node scripts/check-client-bundles.mjs",
+    "check:blogs-size": "node --experimental-strip-types --no-warnings scripts/check-blogs-size.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
