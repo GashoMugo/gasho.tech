@@ -6,6 +6,7 @@ import {
   MAX_SLUG_LENGTH,
   applyPostUpdate,
   buildNewPost,
+  commitTitle,
   normalizeSlug,
   slugify,
   type BlogPostShape,
@@ -119,6 +120,23 @@ test("a required field cannot be cleared, only rewritten", () => {
 test("an updated title is stored trimmed", () => {
   const saved = applyPostUpdate(EXISTING, { title: "  Spaced Title  " })
   assert.equal(saved.title, "Spaced Title")
+})
+
+test("the optional strings are stored trimmed, so a blank field is a blank field", () => {
+  // `"   "` used to be stored verbatim: invisible on the page, but not equal to
+  // the "" that means "cleared", so an "empty" excerpt stayed different from one.
+  const trimmed = applyPostUpdate(EXISTING, {
+    excerpt: "  spaced excerpt  ",
+    author: " GashoTech ",
+    category: " AI ",
+  })
+  assert.equal(trimmed.excerpt, "spaced excerpt")
+  assert.equal(trimmed.author, "GashoTech")
+  assert.equal(trimmed.category, "AI")
+
+  const blanked = applyPostUpdate(EXISTING, { excerpt: "   ", author: "  " })
+  assert.equal(blanked.excerpt, "")
+  assert.equal(blanked.author, "")
 })
 
 test("a create builds a complete post from the body alone", () => {
@@ -279,9 +297,9 @@ test("a hero image must stay a local, non-traversing path", () => {
     "/images/../../etc/passwd",
     "images/x.webp",
     "//evil.example/x.png",
+    "/images/blog/x.webp?ref=main&x=1",
+    "/images/blog/x.webp#frag",
   ]) {
-    // `''` is not in the list: it is the explicit "clear the hero" signal, and the
-    // renderers fall back to the house hero for it.
     const updated = applyPostUpdate(EXISTING, { image: unsafe })
     assert.equal(updated.image, EXISTING.image, `update stored the unsafe image ${unsafe}`)
 
@@ -291,6 +309,27 @@ test("a hero image must stay a local, non-traversing path", () => {
 
   const safe = applyPostUpdate(EXISTING, { image: "/images/blog/hero-2026.webp" })
   assert.equal(safe.image, "/images/blog/hero-2026.webp", "a normal image path must be kept")
+
+  // Five archived posts carry a cache-busting hero; a re-publish that echoes one
+  // back must not lose it to the guard.
+  const versioned = applyPostUpdate(EXISTING, { image: "/images/blog/hero.webp?v=3" })
+  assert.equal(versioned.image, "/images/blog/hero.webp?v=3", "a ?v= hero must survive")
+
+  // '' still means "clear it", as for every other optional field.
+  assert.equal(applyPostUpdate(EXISTING, { image: "" }).image, "")
+})
+
+test("a commit message cannot be given extra lines by a title", () => {
+  // Commit messages are line-oriented: a title with a newline forges trailers in
+  // the history of main. Only the message copy is flattened — the stored title is
+  // untouched.
+  assert.equal(
+    commitTitle("Policy recap\n\nCo-authored-by: someone@example.com"),
+    "Policy recap Co-authored-by: someone@example.com"
+  )
+  assert.equal(commitTitle("  Spaced\tTitle  "), "Spaced Title")
+  assert.equal(commitTitle("x".repeat(300)).length, 120)
+  assert.equal(commitTitle(undefined), "")
 })
 
 test("tags are bounded so a post cannot grow the committed file without limit", () => {
