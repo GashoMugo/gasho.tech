@@ -134,6 +134,19 @@ export default function StudioPage() {
     }
   }, [token, authHeaders])
 
+  /**
+   * A 401 from any studio route means the stored session is gone (expired,
+   * rotated password, or a stale token in localStorage). Clear it and say so,
+   * rather than reporting it as a generation failure.
+   */
+  const handleExpiredSession = (res: Response): boolean => {
+    if (res.status !== 401) return false
+    clearAdminToken()
+    setToken(null)
+    setMessage({ text: 'Your session expired. Sign in again at /blogs/admin.', type: 'error' })
+    return true
+  }
+
   const copyToClipboard = async (field: string, text: string) => {
     try {
       await navigator.clipboard.writeText(text)
