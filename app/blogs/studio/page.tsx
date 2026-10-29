@@ -57,7 +57,11 @@ export default function StudioPage() {
     // `readAdminToken` also discards anything that is not a `v1.` session — the
     // old format was the base64 of the admin password.
     const saved = readAdminToken()
+    // Restoring a persisted session is an external-system sync; this rule does
+    // not model localStorage reads, so the setter here is intentional.
+    /* eslint-disable react-hooks/set-state-in-effect */
     if (saved) setToken(saved)
+    /* eslint-enable react-hooks/set-state-in-effect */
 
     // Every route under /api/studio now requires the admin session, the model
     // list included, so there is nothing to ask for without a token — and the
@@ -89,19 +93,6 @@ export default function StudioPage() {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,
   }), [token])
-
-  /**
-   * A 401 from any studio route means the stored session is gone (expired,
-   * rotated password, or a stale token in localStorage). Clear it and say so,
-   * rather than reporting it as a generation failure.
-   */
-  const handleExpiredSession = (res: Response): boolean => {
-    if (res.status !== 401) return false
-    clearAdminToken()
-    setToken(null)
-    setMessage({ text: 'Your session expired. Sign in again at /blogs/admin.', type: 'error' })
-    return true
-  }
 
   /**
    * The archive as the server sees it, used only to name the post this publish is
@@ -143,6 +134,13 @@ export default function StudioPage() {
     if (res.status !== 401) return false
     clearAdminToken()
     setToken(null)
+    // The generated draft and the rendered hero were produced under the session
+    // that just expired. Leaving them in state kept a whole 8k-token draft and a
+    // paid image alive in a signed-out page (and one click from being copied),
+    // so they go with the session — the same rule the admin panel applies to its
+    // post list.
+    setResult(null)
+    setImageData('')
     setMessage({ text: 'Your session expired. Sign in again at /blogs/admin.', type: 'error' })
     return true
   }
