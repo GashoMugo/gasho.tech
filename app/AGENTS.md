@@ -24,7 +24,7 @@ Root of the Next.js App Router. Contains route segments, server components, layo
 - Use `next/image` for all images, never raw `<img>` tags
 - Sitemap and robots routes are dynamically generated from `data/`
 - Page-level metadata goes via `metadata` export, not `<head>`
-- Site deployment: Vercel. Git author must be `gashotoxic <denismugo101@gmail.com>` or Vercel deploys will fail.
+- Site deployment: Vercel. Git author must be `GashoMugo <denismugo101@gmail.com>` or Vercel deploys will fail.
 
 ## Child DOX Index
 

@@ -79,7 +79,7 @@ Default section order:
 
 ## User Preferences
 
-- Git author MUST be `gashotoxic <denismugo101@gmail.com>` for Vercel deploys. Mismatched email blocks deployments.
+- Git author MUST be `GashoMugo <denismugo101@gmail.com>` for Vercel deploys. Mismatched email blocks deployments.
 - Correct domain is `gashotech.com` (NOT `gasho.tech`).
 - Branch strategy: feature branches off main, PR back to main. Never push directly to main without approval.
 - Conventional commits: `feat:`, `fix:`, `chore:`, `refactor:`, `docs:`.

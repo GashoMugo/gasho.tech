@@ -69,7 +69,7 @@ function makeFileStore(initial: BlogPost[]) {
       writtenPayloads.push(payload)
       committedMessages.push(commitMessage)
       file = payload
-      return { success: true, url: "https://github.com/gashotoxic/gasho.tech/commit/abc" }
+      return { success: true, url: "https://github.com/GashoMugo/gasho.tech/commit/abc" }
     },
   }
 
