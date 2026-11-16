@@ -14,7 +14,7 @@ import assert from "node:assert/strict"
 
 process.env.GH_TOKEN = "test-token"
 
-const API_BASE = "https://api.github.com/repos/gashotoxic/gasho.tech/contents/data/blogs.json"
+const API_BASE = "https://api.github.com/repos/GashoMugo/gasho.tech/contents/data/blogs.json"
 
 interface Recorded {
   url: string
