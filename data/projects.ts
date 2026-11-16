@@ -325,12 +325,12 @@ export const projects: Project[] = [
     },
     // Public as of 2026-10-08 (repo made public after the history scrub), so this can finally
     // point at the real repo instead of being left empty.
-    githubUrl: "https://github.com/gashotoxic/GT-ASSIST-V2",
+    githubUrl: "https://github.com/GashoMugo/GT-ASSIST-V2",
     // Public repo (2026-10-08), so this points at the real README — the architecture
     // section ("## Architecture (5-minute read)") lives in the repo README.md itself
     // since PR #39. The public/docs/ mirror is a legacy fallback from the private era;
     // dropping it is queued as a follow-up once inbound links are checked.
-    readmeUrl: "https://github.com/gashotoxic/GT-ASSIST-V2/blob/main/README.md",
+    readmeUrl: "https://github.com/GashoMugo/GT-ASSIST-V2/blob/main/README.md",
     // 60s product walkthrough, recorded 2026-10-07 (60.000s, verified frame-by-frame).
     demoVideoUrl: "https://gashotech.com/videos/gt-assist-v2-demo.mp4",
     status: "live",

@@ -4,7 +4,7 @@
 import type { BlogPostShape } from "./blog-post-update.ts"
 
 const GITHUB_TOKEN = process.env.GH_TOKEN
-const REPO_OWNER = "gashotoxic"
+const REPO_OWNER = "GashoMugo"
 const REPO_NAME = "gasho.tech"
 const BRANCH = "main"
 const FILE_PATH = "data/blogs.json"
