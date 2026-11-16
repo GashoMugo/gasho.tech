@@ -2,7 +2,7 @@
 // Uses GH_TOKEN env var to commit changes to data/blogs.json
 
 const GITHUB_TOKEN = process.env.GH_TOKEN
-const REPO_OWNER = "gashotoxic"
+const REPO_OWNER = "GashoMugo"
 const REPO_NAME = "gasho.tech"
 const BRANCH = "main"
 const FILE_PATH = "data/blogs.json"
