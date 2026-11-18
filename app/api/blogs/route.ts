@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
-import { isAuthorizedRequest, readAdminAuth } from "@/lib/auth"
+import { readAdminAuth } from "@/lib/auth"
+import { enforceStudioThrottle } from "@/lib/studio-throttle"
 import { buildNewPost, commitTitle, normalizeSlug, type BlogPostShape } from "@/lib/blog-post-update"
 import { clearBlogReadCache, readBlogFileCached } from "@/lib/blog-read-cache"
 import {
@@ -299,9 +300,12 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  if (!isAuthorizedRequest(request)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
+  // The shared admin gate plus the studio spend budget (1 token): 401 without a
+  // session, 429 when the budget is spent, both before the body is parsed and
+  // before the read-merge-commit reaches GitHub. These three handlers used to
+  // check only authorization, so the metered publish route had an unmetered twin.
+  const denied = enforceStudioThrottle(request, "blogsWrite")
+  if (denied) return denied
 
   try {
     const raw = await request.json()
@@ -346,9 +350,8 @@ export async function POST(request: Request) {
 }
 
 export async function PUT(request: Request) {
-  if (!isAuthorizedRequest(request)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
+  const denied = enforceStudioThrottle(request, "blogsWrite")
+  if (denied) return denied
 
   try {
     const raw = await request.json()
@@ -378,9 +381,8 @@ export async function PUT(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-  if (!isAuthorizedRequest(request)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
+  const denied = enforceStudioThrottle(request, "blogsWrite")
+  if (denied) return denied
 
   try {
     const { searchParams } = new URL(request.url)

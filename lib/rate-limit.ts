@@ -132,11 +132,11 @@ function getBucket(key: string, now: number): Bucket {
  *    hop is whatever the caller chose to send.
  * 3. `x-real-ip` — some other proxies set only this.
  *
- * Both forwarded headers go through the same hop parser and the same IP-shape
- * check: taking a header value verbatim as the bucket key would let a caller who
- * can seed a prefix ("1.2.3.4, <their ip>") mint a fresh bucket per request,
- * which is a complete limiter bypass. A value that is not an IP literal is
- * ignored, not trusted.
+ * All three go through the same IP-shape check and the same hop parser where a
+ * hop list applies: taking a header value verbatim as the bucket key would let a
+ * caller who can seed a prefix ("1.2.3.4, <their ip>") mint a fresh bucket per
+ * request, which is a complete limiter bypass. A value that is not an IP literal
+ * is ignored, not trusted.
  *
  * Foot-gun: a request carrying none of them (only possible off-Vercel, in tests,
  * or behind a misconfigured proxy) keys to the literal string "unknown" — ONE
@@ -152,9 +152,9 @@ export function clientKey(request: Request): string {
   const fromXff = lastForwardedHop(request.headers.get("x-forwarded-for"))
   if (fromXff) return fromXff
 
-  const realIp = request.headers.get("x-real-ip")
-  if (realIp && realIp.trim()) return realIp.trim()
-  return "unknown"
+  // A bare `x-real-ip` gets the same shape check and byte cap as the hops above:
+  // taking it raw let a caller mint a fresh bucket per request.
+  return normalizeIpLiteral(request.headers.get("x-real-ip")?.trim()) ?? "unknown"
 }
 
 /** Longest textual form of an IP literal we will accept as a key. */
@@ -469,7 +469,11 @@ export function consumeChatUpstreamBudget(
   estimatedTokens = 0,
   now: number = Date.now()
 ): boolean {
-  if (now < upstreamWindowStartedAt || now - upstreamWindowStartedAt >= UPSTREAM_WINDOW_MS) {
+  // Monotonic: a backward clock step must never reset the window. Negative
+  // elapsed keeps the current window spent until the wall clock catches up —
+  // failing closed, where the old `now < upstreamWindowStartedAt` branch granted
+  // a fresh full budget on an NTP step backwards.
+  if (now - upstreamWindowStartedAt >= UPSTREAM_WINDOW_MS) {
     upstreamWindowStartedAt = now
     upstreamCallsInWindow = 0
     upstreamTokensInWindow = 0
@@ -531,6 +535,7 @@ export function resetChatUpstreamBudget(): void {
  *   write        costs 4
  *   image        costs 4
  *   research     costs 2
+ *   publish / blogs write costs 1
  *
  * Deliberately NOT shared with the login limiter: that one fails closed on
  * saturation to stop password guessing, and a spent spend-budget must not be able
@@ -561,6 +566,9 @@ export const STUDIO_COST = {
   // and the archive to GitHub, so a stolen token must not be able to drive it in a
   // loop either. One token keeps a normal drafting rhythm free of friction.
   publish: 1,
+  // `/api/blogs` POST/PUT/DELETE: the same read-merge-commit as `publish`, and it
+  // was the sibling endpoint that skipped the meter entirely.
+  blogsWrite: 1,
 } as const
 
 export type StudioAction = keyof typeof STUDIO_COST

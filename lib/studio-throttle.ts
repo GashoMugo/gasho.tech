@@ -4,7 +4,8 @@ import { readAdminSessionKey } from '@/lib/auth'
 import { STUDIO_COST, spendStudioTokens, type StudioAction } from '@/lib/rate-limit'
 
 /**
- * The gate for every paid `/api/studio/*` route: one call, two answers.
+ * The gate for every route that spends the studio budget — the paid
+ * `/api/studio/*` routes and the `/api/blogs` writes: one call, two answers.
  *
  * Authentication says *whether* a caller may spend; the session token bucket says
  * *how much, how fast*. Both belong before the body is parsed and before the

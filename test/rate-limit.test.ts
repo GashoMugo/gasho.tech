@@ -182,6 +182,25 @@ test("clientKey uses the last x-forwarded-for hop, not the caller's first entry"
   assert.equal(clientKey(anonymous), "unknown")
 })
 
+test("a non-IP x-real-ip is ignored, not adopted as the bucket key", () => {
+  const junk = new Request("https://gashotech.com/api/blogs/login", {
+    headers: { "x-real-ip": "definitely-not-an-ip" },
+  })
+  assert.equal(clientKey(junk), "unknown")
+
+  // A bare x-real-ip is not a hop list: taking the last comma-separated entry
+  // would let the caller choose their own key.
+  const seeded = new Request("https://gashotech.com/api/blogs/login", {
+    headers: { "x-real-ip": "1.2.3.4, 203.0.113.7" },
+  })
+  assert.equal(clientKey(seeded), "unknown")
+
+  const padded = new Request("https://gashotech.com/api/blogs/login", {
+    headers: { "x-real-ip": " 203.0.113.9 " },
+  })
+  assert.equal(clientKey(padded), "203.0.113.9")
+})
+
 /*
  * --- Review R-PR47: chat bucket saturation + token-denominated ceiling --------
  *
