@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T13:04:03+03:00",
+  "generated_at": "2026-11-18T15:00:51+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 101.0,
-    "http_requests": 39,
+    "elapsed_seconds": 48.7,
+    "http_requests": 4,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 101s < 600s)"
+    "budget_status": "within cap (elapsed 49s < 600s)"
   },
   "source_health": [
     {
@@ -26,7 +26,7 @@
       "source": "Kenya Gazette (kenyalaw.org archive)",
       "status": "failed",
       "records": 0,
-      "detail": "gazette index fetch failed (FetchError: disallowed by robots.txt: https://kenyalaw.org/gazettes/)"
+      "detail": "gazette index fetch failed (FetchError: failed after 3 attempt(s): https://kenyalaw.org/gazettes/ (HTTP Error 502: Bad Gateway))"
     }
   ],
   "tenders": [
