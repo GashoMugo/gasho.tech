@@ -395,3 +395,48 @@ test("/api/studio/publish is metered too, and refuses before it touches GitHub",
     globalThis.fetch = original
   }
 })
+
+test("/api/blogs writes answer 401 without a session and 429 with zero upstream calls once the budget is spent", async () => {
+  const { createSessionToken } = await import("../lib/auth.ts")
+  const { enforceStudioThrottle } = await import("../lib/studio-throttle.ts")
+  const token = createSessionToken()
+  assert.ok(token, "a test session could not be issued")
+
+  const routeModule = (await import("../app/api/blogs/route.ts")) as {
+    POST: (request: Request) => Promise<Response>
+  }
+  const request = () =>
+    new Request("http://localhost/api/blogs", {
+      method: "POST",
+      headers: { "content-type": "application/json", authorization: `Bearer ${token}` },
+      body: JSON.stringify({ title: "metering probe", content: "A body." }),
+    })
+
+  // The auth half must survive the metering change: no session, 401 first.
+  const anonymous = await routeModule.POST(
+    new Request("http://localhost/api/blogs", { method: "POST" })
+  )
+  assert.equal(anonymous.status, 401, "an anonymous write must be refused before the budget is consulted")
+
+  // Drain this session's bucket through the exact gate the route calls, so the
+  // route's own key derivation is what the 429 below is measured against.
+  let denials = 0
+  while (enforceStudioThrottle(request(), "blogsWrite") === null) {
+    denials += 1
+    assert.ok(denials < 500, "the drain loop must terminate")
+  }
+
+  const calls: string[] = []
+  const original = globalThis.fetch
+  globalThis.fetch = (async (input: RequestInfo | URL) => {
+    calls.push(String(input))
+    return new Response("{}", { status: 200, headers: { "content-type": "application/json" } })
+  }) as typeof fetch
+  try {
+    const refused = await routeModule.POST(request())
+    assert.equal(refused.status, 429, "a spent budget must throttle /api/blogs writes")
+    assert.deepEqual(calls, [], "a throttled write must not reach GitHub")
+  } finally {
+    globalThis.fetch = original
+  }
+})

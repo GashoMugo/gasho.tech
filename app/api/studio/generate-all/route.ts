@@ -113,9 +113,15 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error('Generate-all failed:', error)
-    const errorMsg = error instanceof Error ? error.message : 'unknown error'
+    // Detail stays in the server log. The caller gets a fixed message and, at
+    // most, the upstream HTTP status — never the provider's error body.
+    const status = /Chutes API error (\d{3})/.exec(
+      error instanceof Error ? error.message : ''
+    )?.[1]
     return NextResponse.json(
-      { error: `Generation failed: ${errorMsg}. Try switching models or try again.` },
+      {
+        error: `Generation failed${status ? ` (upstream ${status})` : ''}. Try switching models or try again.`,
+      },
       { status: 500 }
     )
   }
