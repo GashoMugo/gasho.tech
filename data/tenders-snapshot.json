@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T15:00:51+03:00",
+  "generated_at": "2026-11-18T18:01:50+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 48.7,
-    "http_requests": 4,
+    "elapsed_seconds": 105.9,
+    "http_requests": 40,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 49s < 600s)"
+    "budget_status": "within cap (elapsed 106s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 458 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 466 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -26,7 +26,7 @@
       "source": "Kenya Gazette (kenyalaw.org archive)",
       "status": "failed",
       "records": 0,
-      "detail": "gazette index fetch failed (FetchError: failed after 3 attempt(s): https://kenyalaw.org/gazettes/ (HTTP Error 502: Bad Gateway))"
+      "detail": "gazette index fetch failed (FetchError: disallowed by robots.txt: https://kenyalaw.org/gazettes/)"
     }
   ],
   "tenders": [
@@ -393,6 +393,25 @@
     },
     {
       "rank": 20,
+      "title": "VARIOUS CATEGORIES OF INSURANCE SERVICES",
+      "buyer": "NG-CDF BOARD",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-11-25 10:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/313572",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "ngcdf"
+    },
+    {
+      "rank": 21,
       "title": "PROPOSED REPAIR AND RENOVATION OF STAFF CAFETERIA AT NEW ASSEMBLY BUILDING",
       "buyer": "County Assembly Of Turkana",
       "category": "Works",
@@ -411,7 +430,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 21,
+      "rank": 22,
       "title": "PROPOSED CAR PARK AT THE NEW ASSEMBLY BUILDING",
       "buyer": "County Assembly Of Turkana",
       "category": "Works",
@@ -430,7 +449,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 22,
+      "rank": 23,
       "title": "Framework - Hire of Machinery & Solid Waste Management",
       "buyer": "Nyandarua County Government",
       "category": "Non Consultancy Services",
@@ -449,7 +468,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 23,
+      "rank": 24,
       "title": "CONSULTANCY SERVICES FOR UNDERTAKING A FEASIBILITY STUDY AND DEVELOPING A CONCEPT DESIGN FOR A STATE-OF-THE-ART NATIONAL QUALITY CONTROL LABORATORY.",
       "buyer": "NATIONAL QUALITY CONTROL LABORATORY",
       "category": "Consultancy Services",
@@ -468,7 +487,7 @@
       "buyer_level": "national"
     },
     {
-      "rank": 24,
+      "rank": 25,
       "title": "PROCUREMENT OF ADDITIONAL LICENCES FOR SECURITY INFORMATION AND EVENT MANAGEMENT (SIEM) SOLUTION",
       "buyer": "Kenya Power & Lighting Company",
       "category": "Non Consultancy Services",
@@ -487,7 +506,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 25,
+      "rank": 26,
       "title": "PRPOSED RESOLUTION TRACKING SYSTEM",
       "buyer": "Kwale County Government",
       "category": "Non Consultancy Services",
@@ -506,7 +525,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 26,
+      "rank": 27,
       "title": "PROPOSED DEVELOPMENT OF PROJECTS MONITORING SYSTEM (INVESTMENT DASHBOARD)",
       "buyer": "Kwale County Government",
       "category": "Non Consultancy Services",
@@ -525,7 +544,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 27,
+      "rank": 28,
       "title": "PROVISION OF MEDICAL SERVICES",
       "buyer": "The Kenyatta International Convention Centre",
       "category": "Non Consultancy Services",
@@ -544,7 +563,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 28,
+      "rank": 29,
       "title": "PROVISION OF GENERAL INSURANCE SERVICES",
       "buyer": "The Kenyatta International Convention Centre",
       "category": "Non Consultancy Services",
@@ -563,7 +582,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 29,
+      "rank": 30,
       "title": "SUPPLY, INSTALLATION, CONFIGURATION, TESTING AND COMMISSIONING OF SD-WAN, MPLS AND INTERNET CONNECTIVITY, INCLUDING ASSOCIATED NETWORK EQUIPMENT AND ACCESSORIES",
       "buyer": "Nairobi County Government",
       "category": "Non Consultancy Services",
@@ -582,7 +601,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 30,
+      "rank": 31,
       "title": "FRAMEWORK AGREEMENT TENDER FOR PROVISION OF GOK FERTILIZER INSPECTION SERVICES.",
       "buyer": "National Cereals and Produce Board",
       "category": "Consultancy Services",
@@ -601,7 +620,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 31,
+      "rank": 32,
       "title": "PROPOSED CONSTRUCTION OF NGURWEINI DIGITAL HUB",
       "buyer": "KANDARA NATIONAL GOVERNMENT CONSTITUENCIES DEVELOPMENT FUND",
       "category": "Works",
@@ -620,7 +639,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 32,
+      "rank": 33,
       "title": "PROVISION OF CONSULTANCY SERVICES FOR STRATEGIC COMMUNICATION AND MEDIA MONITORING SERVICES",
       "buyer": "Independent Electoral and Boundaries Commission",
       "category": "Consultancy Services",
@@ -639,7 +658,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 33,
+      "rank": 34,
       "title": "NCWSC/33/2026 - PROVISION OF ICT DATA CENTER SERVICING AND MAINTENANCE FOR NAIROBI CITY WATER & SEWERAGE COMPANY LIMITED",
       "buyer": "Nairobi City Water & Sewerage Company LTD",
       "category": "Non Consultancy Services",
@@ -658,7 +677,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 34,
+      "rank": 35,
       "title": "NCWSC/34/2026 - REQUEST FOR REPAIR WORKS FOR DATA CENTER HIREF COOLING SYSTEM",
       "buyer": "Nairobi City Water & Sewerage Company LTD",
       "category": "Non Consultancy Services",
@@ -677,7 +696,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 35,
+      "rank": 36,
       "title": "PROVISION OF STAFF MEDICAL INSURANCE COVER",
       "buyer": "Makueni County Government",
       "category": "Non Consultancy Services",
@@ -696,7 +715,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 36,
+      "rank": 37,
       "title": "PROVISION OF SANITATION AND DISPOSAL SERVICES",
       "buyer": "COAST INSTITUTE OF TECHNOLOGY",
       "category": "Non Consultancy Services",
@@ -715,7 +734,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 37,
+      "rank": 38,
       "title": "PROVISION OF INSURANCE SERVICES",
       "buyer": "COAST INSTITUTE OF TECHNOLOGY",
       "category": "Non Consultancy Services",
@@ -734,7 +753,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 38,
+      "rank": 39,
       "title": "Provision of maintenance, repairs and servicing of motor vehicles-Framework agreement",
       "buyer": "County Assembly of Nyandarua",
       "category": "Non Consultancy Services",
@@ -753,7 +772,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 39,
+      "rank": 40,
       "title": "Provision of hotel services, conference facilities and outside catering-Framework agreement",
       "buyer": "County Assembly of Nyandarua",
       "category": "Non Consultancy Services",
@@ -772,7 +791,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 40,
+      "rank": 41,
       "title": "Provision of generator repair, services and maintenance-Framework agreement",
       "buyer": "County Assembly of Nyandarua",
       "category": "Non Consultancy Services",
@@ -791,7 +810,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 41,
+      "rank": 42,
       "title": "PROVISION OF AN ELECTRONIC DOCUMENT AND RECORDS MANAGEMENT SYSTEM",
       "buyer": "Office of the Auditor General",
       "category": "Non Consultancy Services",
@@ -810,7 +829,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 42,
+      "rank": 43,
       "title": "NCWSC/39/2026 - PROPOSED KABETE BACK WASH WATER RECIRCULATION SYSTEM (RESERVED FOR YOUTH, WOMEN AND PERSONS WITH DISABILITY) (RE-ADVERTISEMENT)",
       "buyer": "Nairobi City Water & Sewerage Company LTD",
       "category": "Works",
@@ -829,7 +848,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 43,
+      "rank": 44,
       "title": "Registration of Suppliers for supply and delivery of goods, works and services for FY 2026/27 and 2027/28",
       "buyer": "National Construction Authority",
       "category": "Non Consultancy Services",
@@ -848,7 +867,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 44,
+      "rank": 45,
       "title": "PROVISION OF INSURANCE SERVICES FOR MOTOR VEHICLE, MOTORCYCLE AND MOTOR BOAT",
       "buyer": "LAMU EAST NG-CDF",
       "category": "Non Consultancy Services",
@@ -867,7 +886,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 45,
+      "rank": 46,
       "title": "PROVISION OF GENERAL INSURANCE COVER.",
       "buyer": "LAMU EAST NG-CDF",
       "category": "Non Consultancy Services",
@@ -886,7 +905,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 46,
+      "rank": 47,
       "title": "DESIGN, SUPPLY, IMPLEMENTATION, MIGRATION AND COMMISSIONING OF A VIRTUALIZED ENVIRONMENT FOR CENTRAL BANK OF KENYA- RE-ADVERTISEMENT.",
       "buyer": "Central Bank of Kenya",
       "category": "Non Consultancy Services",
@@ -905,7 +924,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 47,
+      "rank": 48,
       "title": "SUPPLY ,DELIVERY, INSTALLATION, TESTING AND COMMISSIONING OF REFRIGERATED MORTUARY COLDROOM CABINETS.",
       "buyer": "Makueni County Government",
       "category": "Works",
@@ -924,7 +943,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 48,
+      "rank": 49,
       "title": "Tender for Purchase of Land for ARN Kianganga Road Link in Nyondia A access roads in Malewa West ward, Gilgil sub-county",
       "buyer": "Nakuru County Government",
       "category": "Goods",
@@ -943,7 +962,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 49,
+      "rank": 50,
       "title": "Tender for Purchase of Land for Proposed Drilling of Kijabe Community Borehole Water Project Subukia ward, Subukia sub county",
       "buyer": "Nakuru County Government",
       "category": "Goods",
@@ -959,25 +978,6 @@
       "url": "https://tenders.go.ke/tenders/313084",
       "source": "ppip",
       "sector": "works-infrastructure",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 50,
-      "title": "Tender for Purchase of Land for Segutec Water Project in Subukia ward, Waseges Sub-county",
-      "buyer": "Nakuru County Government",
-      "category": "Goods",
-      "deadline": "2026-11-25 10:00",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313085",
-      "source": "ppip",
-      "sector": "goods-supplies",
       "buyer_level": "county"
     }
   ],
