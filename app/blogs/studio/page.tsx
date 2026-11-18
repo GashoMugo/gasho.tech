@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { renderMarkdown } from '@/lib/studio-api'
 import { clearAdminToken, readAdminToken } from '@/lib/admin-client'
+import { findPostsByTitle } from '@/lib/blog-post-update'
 import Link from 'next/link'
 import { 
   Search, 
@@ -38,7 +39,7 @@ export default function StudioPage() {
   const [availableModels, setAvailableModels] = useState<Array<{id: string, name: string, provider: string}>>([])
   const [query, setQuery] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [message, setMessage] = useState<{ text: string; type: 'success' | 'error' } | null>(null)
+  const [message, setMessage] = useState<{ text: string; type: 'success' | 'error' | 'warning' } | null>(null)
   const [result, setResult] = useState<GenerateAllResult | null>(null)
   const [showMarkdownPreview, setShowMarkdownPreview] = useState(false)
   const [copiedField, setCopiedField] = useState<string | null>(null)
@@ -101,6 +102,37 @@ export default function StudioPage() {
     setMessage({ text: 'Your session expired. Sign in again at /blogs/admin.', type: 'error' })
     return true
   }
+
+  /**
+   * The archive as the server sees it, used only to name the post this publish is
+   * editing.
+   *
+   * A title cannot do that job on its own: `data/blogs.json` holds two different
+   * posts with the same title, and a route that picks the first match for a
+   * title-only publish rewrites one post's body with another's content. So the
+   * studio resolves the slug itself when the title identifies exactly one post.
+   * Re-read on every publish (not once on mount) so a post published a moment ago
+   * is in the list.
+   *
+   * `[]` on any failure: then no slug is sent and the route decides — a 409 with
+   * the candidates is the honest answer, and it is better than a guess.
+   */
+  const loadArchiveIndex = useCallback(async (): Promise<Array<{ slug: string; title: string }>> => {
+    if (!token) return []
+    try {
+      const res = await fetch('/api/blogs', { headers: authHeaders(), cache: 'no-store' })
+      if (!res.ok) return []
+      const list = await res.json()
+      if (!Array.isArray(list)) return []
+      return list.flatMap((post) =>
+        post && typeof post.slug === 'string'
+          ? [{ slug: post.slug, title: typeof post.title === 'string' ? post.title : '' }]
+          : []
+      )
+    } catch {
+      return []
+    }
+  }, [token, authHeaders])
 
   const copyToClipboard = async (field: string, text: string) => {
     try {
@@ -228,6 +260,16 @@ export default function StudioPage() {
         author: publishAuthor,
         published: publishPublished,
       }
+
+      // Name the post this publish edits. The archive holds a duplicate-title
+      // pair, so a title alone cannot identify one post — and a route that guesses
+      // rewrites one post's body with another's content. Exactly one archived post
+      // with this title means "this is that post"; zero means "a new post"; more
+      // than one means nothing is sent and the route answers 409 with the
+      // candidates rather than picking for us.
+      const matches = findPostsByTitle(await loadArchiveIndex(), result.title)
+      if (matches.length === 1) payload.slug = matches[0].slug
+
       if (imageData) {
         payload.imageData = imageData
         payload.imagePath = `/images/blog/${slug}.webp`
@@ -245,17 +287,31 @@ export default function StudioPage() {
 
       const data = await res.json()
       if (res.ok) {
+        // A generated hero that did not reach the repository is not something to
+        // report as a clean publish: the post is live with the *previous* hero,
+        // and the one the user just generated exists only in this browser.
+        const imageDropped = !!imageData && data.imageCommitted === false
         // `created === false` means this slug already existed and the publish
         // replaced it. The /api/blogs POST path refuses that with a 409, so this
         // path says so too instead of claiming a fresh publish.
-        setMessage({
-          text:
-            data.created === false
-              ? 'Replaced the existing post for this slug — the archive entry was updated, not duplicated.'
-              : 'Published successfully!',
-          type: 'success',
-        })
-        setTimeout(() => router.push(`/blogs/${data.slug || slug}`), 2000)
+        const replaced = data.created === false
+
+        setMessage(
+          imageDropped
+            ? {
+                text: `${
+                  replaced ? 'Replaced the existing post' : 'Published'
+                }, but the generated image was NOT saved — the existing hero was kept. Download it below and upload it if you want it.`,
+                type: 'warning',
+              }
+            : {
+                text: replaced
+                  ? 'Replaced the existing post for this slug — the archive entry was updated, not duplicated.'
+                  : 'Published successfully!',
+                type: 'success',
+              }
+        )
+        setTimeout(() => router.push(`/blogs/${data.slug || slug}`), imageDropped ? 6000 : 2000)
       } else if (!handleExpiredSession(res)) {
         setMessage({ text: data.error || 'Publish failed. Try copying the content instead.', type: 'error' })
       }
@@ -312,7 +368,9 @@ export default function StudioPage() {
           <div className={`mb-6 p-4 rounded-lg text-sm border ${
             message.type === 'success'
               ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300'
-              : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-700 dark:text-red-300'
+              : message.type === 'warning'
+                ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300'
+                : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-700 dark:text-red-300'
           }`}>
             {message.text}
           </div>

@@ -20,22 +20,12 @@ export interface BlogPostShape {
 }
 
 export const MAX_SLUG_LENGTH = 120
+
 /** The committed file has a hard ceiling at GitHub (1 MB), so a post's metadata
  * must not be able to grow without limit. The archive's widest post carries 8
  * tags; 10 x 32 characters leaves headroom and still refuses runaway input. */
 const MAX_TAGS = 10
 const MAX_TAG_LENGTH = 32
-
-/**
- * A stored hero image is a path this site serves, never a URL to somewhere else:
- * `next/image` renders it, and `og:image` is built as
- * `https://gashotech.com${image}`. `javascript:`, `https://evil…` and the
- * protocol-relative `//evil…` would break the page and produce a nonsense share
- * image, so anything that is not a rooted `/images/` path — or that tries to
- * traverse with `..` — falls back instead. Every image in the archive is under
- * `/images/`, which is also what the studio's own guard accepts.
- */
-const SAFE_IMAGE_PATH = /^\/images\/(?!.*\.\.)[A-Za-z0-9._/-]+$/
 
 /** The hero image every post gets when it names none. */
 export const HOUSE_IMAGE_PATH = "/images/AI.webp"
@@ -62,6 +52,55 @@ export function normalizeSlug(input: unknown, fallback: string): string | null {
 }
 
 /**
+ * A title as it is compared against the archive: case and whitespace collapsed.
+ *
+ * The archive is hand-maintained and titles differ by spacing and capitalisation
+ * between the studio's output and what was committed, so an exact string compare
+ * finds nothing.
+ */
+export function normalizeTitle(title: unknown): string {
+  return typeof title === "string" ? title.trim().replace(/\s+/g, " ").toLowerCase() : ""
+}
+
+/**
+ * Every archived post whose title normalises to `title` — all of them, never the
+ * first one.
+ *
+ * `data/blogs.json` really does hold a duplicate-title pair (two different posts,
+ * two different slugs, the same title) from the old append bug, so a title alone
+ * cannot always identify one post. A caller that picks the first match rewrites
+ * one post's body with another's content and leaves the second URL serving stale
+ * text — a silent destruction where the old behaviour appended a harmless
+ * duplicate. Callers must therefore treat `length > 1` as "I cannot tell which
+ * post this means" and refuse, or name the slug explicitly.
+ */
+export function findPostsByTitle<T extends { title?: unknown }>(
+  posts: readonly T[],
+  title: unknown
+): T[] {
+  const wanted = normalizeTitle(title)
+  if (!wanted) return []
+  return posts.filter((post) => normalizeTitle(post.title) === wanted)
+}
+
+/**
+ * A post title as it may appear inside a commit message.
+ *
+ * Commit messages are line-oriented, and the title is caller-supplied: a title
+ * containing a newline forges extra lines in the history of `main` — trailers
+ * included (`Co-authored-by:`, `Signed-off-by:`). The post keeps its title as
+ * written; only the copy that reaches the commit log is flattened and bounded.
+ */
+export function commitTitle(title: unknown): string {
+  const text = typeof title === "string" ? title : String(title ?? "")
+  return text
+    .replace(/[\r\n\t\u0000-\u001f]+/g, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim()
+    .slice(0, 120)
+}
+
+/**
  * True when the caller actually named this key.
  *
  * An absent key and an explicit `undefined` both mean "I did not send this", so a
@@ -84,23 +123,42 @@ function asRequiredString(body: Record<string, unknown>, key: string, fallback: 
 }
 
 /**
- * Optional strings (`excerpt`, `author`, `category`): key absent means
+ * Optional strings (`excerpt`, `author`, `category`, `image`): key absent means
  * "keep what is stored", an explicit `''` means "clear it".
  *
  * The previous truthiness check could not tell those two apart, so `''` silently
  * fell back to the archived value and the studio had no way to remove an excerpt
- * or a byline at all.
+ * or a hero image at all.
  */
 function asClearableString(body: Record<string, unknown>, key: string, fallback: string): string {
   if (!isProvided(body, key)) return fallback
   const value = body[key]
-  return typeof value === "string" ? value : fallback
+  // Trimmed for the same reason the title is: a stray leading space is invisible
+  // on the page but makes the same value look like a different one to every
+  // comparison, and `"   "` means the caller emptied the field.
+  return typeof value === "string" ? value.trim() : fallback
 }
 
 /** Read a value that is already stored: blank or wrongly-typed falls back. */
 function nonBlank(value: unknown, fallback: string): string {
   return typeof value === "string" && value.trim() ? value : fallback
 }
+
+/**
+ * The stored hero image is a path this site serves, never a URL to somewhere
+ * else: `next/image` renders it and `og:image` is built as
+ * `https://gashotech.com${image}`. `javascript:`, `https://evil…` and the
+ * protocol-relative `//evil…` would break the page and produce a nonsense share
+ * card, so anything that is not a rooted `/images/` path — or that tries to
+ * traverse with `..` — falls back to the stored value.
+ *
+ * A constrained query string is allowed because five archived posts carry
+ * cache-busting heroes (`/images/blog/x.webp?v=3`) and `next/image` is
+ * configured to serve that pattern (`localPatterns` in `next.config.ts`).
+ * Anything else in the query — another `?`, a `#`, an unescaped character — is
+ * refused: the value also reaches `<img src>` through `next/image`.
+ */
+const SAFE_IMAGE_PATH = /^\/images\/(?!.*\.\.)[A-Za-z0-9._-]+(?:\/[A-Za-z0-9._-]+)*(?:\?[A-Za-z0-9._=-]*)?$/
 
 function asTags(value: unknown, fallback: string[] | undefined): string[] | undefined {
   if (!Array.isArray(value)) return fallback
@@ -112,18 +170,16 @@ function asTags(value: unknown, fallback: string[] | undefined): string[] | unde
 }
 
 /**
- * A hero may be cleared with `''` (the renderers fall back to the house hero),
- * but any non-empty value must still be a rooted, non-traversing `/images/` path.
+ * A hero image the caller named: `''` clears it (as for the other optional
+ * strings), a usable `/images/` path is stored, and anything else keeps what is
+ * stored rather than putting a broken URL on the page.
  */
-function asClearableImagePath(
-  body: Record<string, unknown>,
-  key: string,
-  fallback: string
-): string {
+function asImagePath(body: Record<string, unknown>, key: string, fallback: string): string {
   if (!isProvided(body, key)) return fallback
   const value = body[key]
+  if (typeof value !== "string") return fallback
   if (value === "") return ""
-  return typeof value === "string" && SAFE_IMAGE_PATH.test(value) ? value : fallback
+  return SAFE_IMAGE_PATH.test(value) ? value : fallback
 }
 
 function asReadTime(value: unknown, fallback: number | undefined): number | undefined {
@@ -150,7 +206,7 @@ export function applyPostUpdate(existing: BlogPostShape, update: unknown): BlogP
     author: asClearableString(body, "author", existing.author),
     category: asClearableString(body, "category", existing.category),
     date: existing.date,
-    image: asClearableImagePath(body, "image", existing.image),
+    image: asImagePath(body, "image", existing.image),
     published:
       typeof body.published === "boolean" ? body.published : existing.published,
     tags: asTags(body.tags, existing.tags),
@@ -200,7 +256,7 @@ export function buildNewPost(
     category: asClearableString(input, "category", nonBlank(archived?.category, "Technology")),
     // A re-publish keeps the archived publish date.
     date: fallbackDate,
-    image: asClearableImagePath(input, "image", nonBlank(archived?.image, HOUSE_IMAGE_PATH)),
+    image: asImagePath(input, "image", nonBlank(archived?.image, HOUSE_IMAGE_PATH)),
     published:
       typeof input.published === "boolean"
         ? input.published

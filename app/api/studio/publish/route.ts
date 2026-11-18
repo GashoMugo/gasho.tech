@@ -1,20 +1,24 @@
 import { NextResponse } from 'next/server'
-import { verifyToken } from '@/lib/auth'
+import { readAdminAuth } from '@/lib/auth'
 import {
   commitBlogChanges,
   commitImage,
   deleteImage,
   readBlogFile,
-  type BlogFileSnapshot,
+  readBlogFileForWrite,
+  type WritableBlogFile,
 } from '@/lib/github'
 import {
   HOUSE_IMAGE_PATH,
   MAX_SLUG_LENGTH,
   buildNewPost,
+  commitTitle,
+  findPostsByTitle,
   normalizeSlug,
   slugify,
   type BlogPostShape,
 } from '@/lib/blog-post-update'
+import { clearBlogReadCache } from '@/lib/blog-read-cache'
 import { publishPostToStore, type PostStore } from '@/lib/blog-publish'
 
 /**
@@ -27,6 +31,16 @@ import { publishPostToStore, type PostStore } from '@/lib/blog-publish'
  * broken image URL.
  */
 const SAFE_IMAGE_PATH = /^\/images\/(?!.*\.\.)[A-Za-z0-9._-]+(?:\/[A-Za-z0-9._-]+)*$/
+
+/**
+ * The only query string a stored hero may carry.
+ *
+ * `?v=3` on five archived posts is a cache-buster, not a URL: the value reaches
+ * `next/image`, whose `localPatterns` allows `?v=*`, and `og:image` as
+ * `https://gashotech.com${image}`. Anything outside this alphabet (another `?`,
+ * a `#`, an escaped character) is not a path this site serves.
+ */
+const SAFE_IMAGE_QUERY = /^\?[A-Za-z0-9._=-]*$/
 
 /** `imageData` is committed under this directory (see `public/images/blog`). */
 const IMAGE_DIRECTORY = 'public/images/blog'
@@ -43,35 +57,45 @@ function pathOnly(value: string): string {
  * `/images/<slug>.webp?v=3` as a cache-buster. Rejecting those would make any
  * caller that prefills a post's stored image (the studio, an edit form, a future
  * re-publish) fall back to the house image and silently rewrite that post's hero —
- * so only the path half is validated, because only the path half names a file.
+ * so only the path half is validated as a path, and the query half is held to the
+ * one shape `next/image` is configured to serve.
  */
 export function isSafeImagePath(value: unknown): boolean {
   if (typeof value !== 'string') return false
-  return SAFE_IMAGE_PATH.test(pathOnly(value))
-}
+  if (value.includes('#')) return false
 
-/** Titles are matched to the archive after collapsing whitespace and case. */
-function normalizeTitle(title: string): string {
-  return title.trim().replace(/\s+/g, ' ').toLowerCase()
+  const parts = value.split('?')
+  if (parts.length > 2) return false
+
+  const [filePath, query] = parts
+  if (!SAFE_IMAGE_PATH.test(filePath)) return false
+  return query === undefined || SAFE_IMAGE_QUERY.test(`?${query}`)
 }
 
 /**
- * Find the archived post a caller means when they send no slug.
+ * The archived post a caller means when they send no slug, or a refusal when the
+ * title cannot identify one.
  *
  * 64 of the 73 posts in `data/blogs.json` have a slug that is *not* the slugified
  * title (they were written before the studio derived slugs from titles), so
- * deriving the slug alone appended a duplicate instead of editing the post.
+ * deriving the slug alone appended a duplicate instead of editing the post — hence
+ * the title lookup.
  *
- * The first match wins. The archive already holds one deliberate duplicate-title
- * pair from the old append bug; picking the earliest keeps the choice stable
- * rather than "whichever is found first today".
+ * But the archive also holds a real duplicate-title pair: index 40
+ * (`kenya-opens-public-consultation-draft`, 4,581-byte body) and index 41
+ * (`opens-public-consultation-draft-ai-emerging`, 5,078-byte body) carry the same
+ * title. "First match wins" rewrote 40's body with 41's content and left 41's URL
+ * serving stale text — silently destructive, where the old append was merely
+ * wrong. So a title that matches more than one post is answered as ambiguous and
+ * nothing is written; the caller has to name the slug (the studio does).
  */
-function findArchivedByTitle(
+function resolveArchivedByTitle(
   posts: readonly BlogPostShape[],
   title: string
-): BlogPostShape | undefined {
-  const wanted = normalizeTitle(title)
-  return posts.find((post) => typeof post.title === 'string' && normalizeTitle(post.title) === wanted)
+): { post?: BlogPostShape; ambiguous: BlogPostShape[] } {
+  const matches = findPostsByTitle(posts, title)
+  if (matches.length === 1) return { post: matches[0], ambiguous: [] }
+  return { post: undefined, ambiguous: matches }
 }
 
 export interface PublishRequest {
@@ -90,12 +114,9 @@ export interface PublishRequest {
 
 export async function POST(request: Request) {
   try {
-    const authHeader = request.headers.get('authorization')
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
-    if (!verifyToken(authHeader.slice(7))) {
+    // One shared reader for the admin state: this route and `/api/blogs` used to
+    // parse the header separately and had already drifted apart.
+    if (readAdminAuth(request) !== 'admin') {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
@@ -123,23 +144,17 @@ export async function POST(request: Request) {
     // has always accepted one); otherwise it is derived from the title, and any
     // exact title match in the archive below re-points it at the stored slug.
     //
-    // A too-long title is reported as what it is: `normalizeSlug` returns null for
-    // both "too long" and "nothing sluggable", and "Invalid title" for a title
-    // that is merely long sent the caller looking for a syntax problem that does
-    // not exist.
-    const derivedSlug = slugify(body.title)
-    if (derivedSlug.length > MAX_SLUG_LENGTH) {
-      return NextResponse.json(
-        {
-          error: `This title becomes a ${derivedSlug.length}-character URL, and the limit is ${MAX_SLUG_LENGTH}. Shorten the title and publish again.`,
-          code: 'title-too-long',
-        },
-        { status: 400 }
-      )
-    }
+    // Order matters: the explicit slug is settled *first*, because a caller who
+    // named the URL never uses the derived one, and refusing a long title they
+    // are not publishing under is a 400 about a value nothing will store.
+    // `''`/whitespace is "not sent" — a form serialises empty fields, and
+    // treating that as a malformed slug refused a publish for a field the caller
+    // left blank.
+    const requestedSlug =
+      typeof body.slug === 'string' && body.slug.trim() ? body.slug.trim() : undefined
 
-    const explicitSlug = normalizeSlug(body.slug, '')
-    if (body.slug !== undefined && !explicitSlug) {
+    const explicitSlug = requestedSlug ? normalizeSlug(requestedSlug, '') : null
+    if (requestedSlug && !explicitSlug) {
       // A slug the caller *did* send must be usable. Silently falling back to the
       // title would let a typo'd slug publish over an existing post instead of
       // failing loudly.
@@ -152,6 +167,23 @@ export async function POST(request: Request) {
         { status: 400 }
       )
     }
+
+    // Only now does the title have to become a URL, so only now can its length
+    // be a problem. A too-long title is reported as what it is: `normalizeSlug`
+    // returns null for both "too long" and "nothing sluggable", and "Invalid
+    // title" for a title that is merely long sent the caller looking for a
+    // syntax problem that does not exist.
+    const derivedSlug = slugify(body.title)
+    if (!explicitSlug && derivedSlug.length > MAX_SLUG_LENGTH) {
+      return NextResponse.json(
+        {
+          error: `This title becomes a ${derivedSlug.length}-character URL, and the limit is ${MAX_SLUG_LENGTH}. Shorten the title and publish again.`,
+          code: 'title-too-long',
+        },
+        { status: 400 }
+      )
+    }
+
     let slug = explicitSlug ?? derivedSlug
     if (!slug) {
       return NextResponse.json({ error: 'Invalid title' }, { status: 400 })
@@ -161,11 +193,17 @@ export async function POST(request: Request) {
     //
     // Two reasons. A re-publish must carry the archived post's date and hero
     // image over (see buildNewPost), and a read failure has to stop the publish
-    // here: nothing has been written yet, so it is reported as `read-failed`
-    // rather than as a failed commit.
-    let snapshot: BlogFileSnapshot
+    // here: nothing has been written yet — not even the image — so it is reported
+    // as `read-failed` rather than as a failed commit.
+    //
+    // `readBlogFileForWrite()` also refuses a 404 from the contents API and hands
+    // back the sha the list was read at. Both matter: a transient 404 arrives as
+    // `{ posts: [], missing: true }`, and merging one post into "the archive is
+    // empty" would commit `{ posts: [thisPost] }` over all 73 — the exact clobber
+    // this module exists to prevent, with no sha to protect it.
+    let snapshot: WritableBlogFile
     try {
-      snapshot = await readBlogFile()
+      snapshot = await readBlogFileForWrite()
     } catch (error) {
       console.error('Blog read failed:', error)
       return NextResponse.json(
@@ -178,12 +216,38 @@ export async function POST(request: Request) {
       )
     }
 
-    const archived =
-      snapshot.posts.find((candidate) => candidate.slug === slug) ??
-      // Only when the slug was derived from the title: an explicit slug is a
-      // request for that URL, and the caller may be publishing a second post that
-      // shares a title (a regional copy, a follow-up).
-      (explicitSlug ? undefined : findArchivedByTitle(snapshot.posts, body.title))
+    // Slug/title resolution, in one place:
+    //
+    // 1. the slug the caller named, or the one derived from the title;
+    // 2. failing that, an archived post with the same title — but ONLY when the
+    //    title identifies exactly one (an explicit slug is a request for that URL,
+    //    and the caller may be publishing a second post that shares a title: a
+    //    regional copy, a follow-up).
+    let archived = snapshot.posts.find((candidate) => candidate.slug === slug)
+    if (!archived && !explicitSlug) {
+      const resolved = resolveArchivedByTitle(snapshot.posts, body.title)
+      if (resolved.ambiguous.length > 1) {
+        // More than one archived post carries this title, so the title does not say
+        // which one this publish means. Guessing *here* is the destructive move: it
+        // rewrites the first post's body with this one's content and leaves the
+        // other URL serving stale text. Nothing has been written yet (the image
+        // commit is below), so this is a clean 409 — retryable the moment the
+        // caller names a slug.
+        const candidates = resolved.ambiguous.map((post) => post.slug)
+        console.warn(
+          `Refusing an ambiguous title: ${candidates.length} archived posts are titled "${body.title}" (${candidates.join(', ')})`
+        )
+        return NextResponse.json(
+          {
+            error: `${candidates.length} archived posts share this title (${candidates.join(', ')}), so nothing was written. Publish from the admin panel, or send the "slug" of the post you mean.`,
+            code: 'ambiguous-title',
+            candidates,
+          },
+          { status: 409 }
+        )
+      }
+      archived = resolved.post
+    }
 
     // The archived slug is the post's URL, so an edit lands on it even when the
     // title slugifies differently. Without this the post was appended as a
@@ -232,7 +296,7 @@ export async function POST(request: Request) {
       const imageResult = await commitImage(
         body.imageData,
         target,
-        `feat(blog): add image for "${body.title}"`
+        `feat(blog): add image for "${commitTitle(body.title)}"`
       )
 
       if (imageResult.success) {
@@ -241,7 +305,14 @@ export async function POST(request: Request) {
         committedImageTarget = target
         committedImageSha = imageResult.sha
       } else {
+        // The image the caller asked to publish is not there, so the post must
+        // not point at it: `imagePath` (whatever the caller prefilled) would
+        // commit a hero that 404s. Dropping it to `undefined` lets
+        // `buildNewPost` keep the archived hero — or the house image — and the
+        // response still reports `imageCommitted: false`, so the caller can say
+        // so instead of believing the image landed.
         console.warn('Image commit failed, using fallback:', imageResult.error)
+        imagePath = undefined
       }
     }
 
@@ -285,6 +356,14 @@ export async function POST(request: Request) {
       let referenced: boolean
       try {
         const latest = await readBlogFile()
+        // A 404 from the contents API is "I cannot tell", not "nothing points at
+        // it": `readBlogFile()` offers a missing file as `{ posts: [], missing:
+        // true }` for a first publish, and an empty list would read as "this blob
+        // is unreferenced" and delete a live hero. A stray blob costs disk.
+        if (latest.missing) {
+          console.warn('Could not re-read the post list before removing the orphaned image; keeping it')
+          return
+        }
         referenced = referencesCommittedImage(latest.posts)
       } catch (error) {
         console.warn('Could not re-read the post list before removing the orphaned image:', error)
@@ -295,7 +374,7 @@ export async function POST(request: Request) {
       const cleanup = await deleteImage(
         committedImageTarget,
         committedImageSha,
-        `chore(blog): drop unused image for "${title}"`
+        `chore(blog): drop unused image for "${commitTitle(title)}"`
       )
       if (!cleanup.success) {
         console.warn('Could not remove the orphaned image commit:', cleanup.error)
@@ -326,22 +405,20 @@ export async function POST(request: Request) {
     // other post in data/blogs.json. Never write a list we did not read first.
     const store: PostStore = {
       // The list read in step 1 is what gets merged into — reading again would
-      // only give a second chance to lose the archived metadata.
-      read: async () => snapshot.posts,
-      write: (posts, commitMessage) =>
-        commitBlogChanges(
-          JSON.stringify({ posts }, null, 2),
-          commitMessage,
-          // Pinning the SHA read above makes a concurrent commit fail (409)
-          // rather than get silently overwritten.
-          snapshot.sha
-        ),
+      // only give a second chance to lose the archived metadata. The sha travels
+      // with it, because `publishPostToStore` writes with the sha its read
+      // returned rather than looking one up afterwards.
+      read: async () => ({ posts: snapshot.posts, sha: snapshot.sha }),
+      write: (posts, commitMessage, sha) =>
+        commitBlogChanges(JSON.stringify({ posts }, null, 2), commitMessage, sha),
     }
 
     const published = await publishPostToStore(
       store,
       post,
-      archived ? `feat(blog): update "${post.title}"` : `feat(blog): publish "${post.title}"`
+      archived
+        ? `feat(blog): update "${commitTitle(post.title)}"`
+        : `feat(blog): publish "${commitTitle(post.title)}"`
     )
     if (!published.success) {
       console.error('Blog commit failed:', published.error)
@@ -371,6 +448,10 @@ export async function POST(request: Request) {
         { status: 500 }
       )
     }
+
+    // A studio publish also feeds the anonymous list: drop the read memo so the
+    // new post is visible now and a replaced one is not served stale.
+    clearBlogReadCache()
 
     return NextResponse.json({
       success: true,
