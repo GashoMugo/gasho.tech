@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-19T09:02:19+03:00",
+  "generated_at": "2026-11-19T12:00:38+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 133.2,
-    "http_requests": 40,
+    "elapsed_seconds": 36.6,
+    "http_requests": 1,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 133s < 600s)"
+    "budget_status": "within cap (elapsed 37s < 600s)"
   },
   "source_health": [
     {
