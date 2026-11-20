@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-20T09:04:07+03:00",
+  "generated_at": "2026-11-20T18:03:57+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 246.2,
+    "elapsed_seconds": 235.9,
     "http_requests": 42,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 246s < 600s)"
+    "budget_status": "within cap (elapsed 236s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 495 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 451 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -165,25 +165,196 @@
     },
     {
       "rank": 8,
-      "title": "PROCUREMENT OF ANNUAL SUPPORT AND MAINTENANCE FOR FORTINET CYBER SECURITY SOLUTIONS",
-      "buyer": "Kenya Power & Lighting Company",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-20 10:00",
+      "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR JUJA MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
+      "buyer": "Kiambu County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-27 10:00",
       "scores": {
-        "capability": 3,
-        "deadline_feasibility": 1,
+        "capability": 2,
+        "deadline_feasibility": 3,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/312421",
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313748",
       "source": "ppip",
-      "sector": "other",
-      "buyer_level": "other"
+      "sector": "consultancy",
+      "buyer_level": "county"
     },
     {
       "rank": 9,
+      "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KARURI MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
+      "buyer": "Kiambu County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313749",
+      "source": "ppip",
+      "sector": "consultancy",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 10,
+      "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KIAMBU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
+      "buyer": "Kiambu County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313751",
+      "source": "ppip",
+      "sector": "consultancy",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 11,
+      "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KIKUYU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
+      "buyer": "Kiambu County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313896",
+      "source": "ppip",
+      "sector": "consultancy",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 12,
+      "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR LIMURU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
+      "buyer": "Kiambu County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313897",
+      "source": "ppip",
+      "sector": "consultancy",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 13,
+      "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR RUIRU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
+      "buyer": "Kiambu County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313898",
+      "source": "ppip",
+      "sector": "consultancy",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 14,
+      "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR THIKA MUNICIPAL",
+      "buyer": "Kiambu County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313899",
+      "source": "ppip",
+      "sector": "consultancy",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 15,
+      "title": "PROPOSED CONSTRUCTION OF PERIMETER FENCE, GUARD HOUSE, CABRO WORKS. FRONT CAR PARKING, UNDERGROUND WATER TANK, ELEVATED WATER TOWER, SOLARIZATION AND OTHER AUXILARY WORKS AT HUDUMA JITUME DIGITAL HAB IN LAFEY CONSTITUENCY",
+      "buyer": "Mandera County Government",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313926",
+      "source": "ppip",
+      "sector": "ict-digital",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 16,
+      "title": "COMPREHENSIVE MAINTENANCE OF KISUMU DATA CENTRE SUPPORT INFRASTRUCTURE INCLUDING CLEANING FOR CENTRAL BANK OF KENYA FOR A PERIOD OF THREE (3) YEARS",
+      "buyer": "Central Bank of Kenya",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-11-27 10:30",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/311084",
+      "source": "ppip",
+      "sector": "ict-digital",
+      "buyer_level": "other"
+    },
+    {
+      "rank": 17,
+      "title": "CONSULTANCY SERVICES FOR VARIOUS-K-WASH PROJECTS",
+      "buyer": "Bomet County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-27 12:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/312820",
+      "source": "ppip",
+      "sector": "consultancy",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 18,
       "title": "PROVISION OF SECURITY SERVICES",
       "buyer": "COAST INSTITUTE OF TECHNOLOGY",
       "category": "Non Consultancy Services",
@@ -202,7 +373,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 10,
+      "rank": 19,
       "title": "PROVISION OF PROJECT MANAGEMENT SERVICES FOR THE GRANULAR DATA INTEGRATION (GDI) PROJECT FOR CENTRAL BANK OF KENYA",
       "buyer": "Central Bank of Kenya",
       "category": "Consultancy Services",
@@ -221,7 +392,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 11,
+      "rank": 20,
       "title": "SUPPLY, INSTALLATION, COMMISSIONING AND MAINTENANCE OF A REVENUE COLLECTION AND MANAGEMENT SYSTEM",
       "buyer": "Nyamira County Government",
       "category": "Non Consultancy Services",
@@ -240,7 +411,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 12,
+      "rank": 21,
       "title": "Provision of maintenance, repairs & servicing of computers, laptops, desktops, printers, projectors UPS, cameras, TVs, tablets and other related accessories-Framework agreement",
       "buyer": "County Assembly of Nyandarua",
       "category": "Non Consultancy Services",
@@ -259,7 +430,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 13,
+      "rank": 22,
       "title": "CONSULTANCY FIRM TO UNDERTAKE ENVIRONMENTAL AND SOCIAL ASSESSMENTS, PREPARE MANAGEMENT PLANS AND PROVIDE ENVIRONMENTAL AND SOCIAL TECHNICAL ASSISTANCE FOR THE NACONEK CENTRALISED AND DECENTRALISED CLEAN COOKING KITCHEN PROJECT",
       "buyer": "NATIONAL COUNCIL FOR NOMADIC EDUCATION IN KENYA",
       "category": "Consultancy Services",
@@ -278,7 +449,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 14,
+      "rank": 23,
       "title": "PROPOSED CONSTRUCTION TO COMPLETION OF A DIGITAL HUB-STANDARD MODEL AT MAUNGU CHIEF’S OFFICE MAUNGU TOWN",
       "buyer": "voi ngcdf",
       "category": "Goods",
@@ -297,7 +468,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 15,
+      "rank": 24,
       "title": "REQUEST FOR PROPOSALS FOR THE PROVISION OF FRAMEWORK FOR FINANCE & ACCOUNTING, INTERGRATED REPORTING AND IMPLEMENTATION OF ESG & SUSTAINABILITY STANDARDS (S1&S2) CONSULTANCY SERVICES (LOT-WISE) FOR THE CENTRAL BANK OF KENYA FOR A PERIOD OF THREE YEARS",
       "buyer": "Central Bank of Kenya",
       "category": "Consultancy Services",
@@ -316,7 +487,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 16,
+      "rank": 25,
       "title": "Supply and Installation of 2 No. High-Performance Enterprise Servers to KALRO Headquarters",
       "buyer": "Kenya Agricultural & Livestock Research Organization",
       "category": "Goods",
@@ -335,7 +506,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 17,
+      "rank": 26,
       "title": "MECHANICAL EXCAVATION TO COMPLETION OF A SECURITY TRENCH 600M AT PANGANI POLICE STATION.",
       "buyer": "NG- CDF LAMU WEST CONSTITUENCY",
       "category": "Works",
@@ -354,7 +525,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 18,
+      "rank": 27,
       "title": "SUPPLY AND DELIVERY OF MOBILE PHONES, TWO-WAY HANDHELD RADIO COMMUNICATION DEVICES, WASHING MACHINES, TELEVISION SET AND DIGITAL SINGLE -LENS REFLEX(DSLR) CAMERAS",
       "buyer": "Bungoma County Government",
       "category": "Goods",
@@ -373,7 +544,26 @@
       "buyer_level": "county"
     },
     {
-      "rank": 19,
+      "rank": 28,
+      "title": "PROPOSED NON-CONSULTANCY SERVICES FOR THE KENYA GOLD SUMMIT & EXPO 2026-WESTERN KENYA EDITION",
+      "buyer": "Kakamega County Government",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-11-25 12:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/313947",
+      "source": "ppip",
+      "sector": "consultancy",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 29,
       "title": "PROCUREMENT OF SUB-TRANSMISSION NETWORK TOOLS",
       "buyer": "Kenya Power & Lighting Company",
       "category": "Goods",
@@ -392,7 +582,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 20,
+      "rank": 30,
       "title": "EXPRESSION OF INTEREST FOR PROVISION OF ENTERPRISE RESOURCE PLANNING SYSTEM AND IMPLEMENTATION SERVICES FOR CENTRAL BANK OF KENYA",
       "buyer": "Central Bank of Kenya",
       "category": "Consultancy Services",
@@ -411,83 +601,235 @@
       "buyer_level": "other"
     },
     {
-      "rank": 21,
-      "title": "PROPOSED CONSTRUCTION OF NGURWEINI DIGITAL HUB",
-      "buyer": "KANDARA NATIONAL GOVERNMENT CONSTITUENCIES DEVELOPMENT FUND",
+      "rank": 31,
+      "title": "PROPOSED PURCHASE OF FORTY-SIX (46) SEATER SEMI-LUXURY KMTC BUS FOR KEGONGA KENYA MEDICAL TRAINING COLLEGE IN KURIA EAST CONSTITUENCY",
+      "buyer": "KURIA EAST NG-CDF",
+      "category": "Goods",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312362",
+      "source": "ppip",
+      "sector": "training-capacity",
+      "buyer_level": "ngcdf"
+    },
+    {
+      "rank": 32,
+      "title": "SUPPLY, DELVERY, INSTALLATION, TESTING, TRAINING AND COMMISSIONING OF SMART WATER METERS",
+      "buyer": "Kiambere-Mwingi Water and Sanitation Company",
       "category": "Works",
-      "deadline": "2026-11-20 10:00",
+      "deadline": "2026-11-27 10:00",
       "scores": {
         "capability": 2,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 5,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 4,
         "value": 2,
         "competition": 2
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311645",
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312679",
+      "source": "ppip",
+      "sector": "training-capacity",
+      "buyer_level": "other"
+    },
+    {
+      "rank": 33,
+      "title": "Purchase of a 51 seater school bus",
+      "buyer": "Subukia NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312810",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "ngcdf"
+    },
+    {
+      "rank": 34,
+      "title": "Purchase of a 51-seater school bus",
+      "buyer": "Subukia NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312812",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "ngcdf"
+    },
+    {
+      "rank": 35,
+      "title": "Purchase of a 51-seater school bus",
+      "buyer": "Subukia NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312813",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "ngcdf"
+    },
+    {
+      "rank": 36,
+      "title": "Purchase of a 51-seater school bus",
+      "buyer": "Subukia NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312815",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "ngcdf"
+    },
+    {
+      "rank": 37,
+      "title": "PROPOSED CONSTRUCTION OF PERIMETER FENCE, GUARD HOUSE, CABRO WORKS. FRONT CAR PARKING, UNDERGROUND WATER TANK, ELEVATED WATER TOWER, SOLARIZATION AND OTHER AUXILARY WORKS AT HUDUMA JITUME DIGITAL HAB IN LAFEY CONSTITUENCY",
+      "buyer": "LAFEY NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 4,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/313930",
       "source": "ppip",
       "sector": "ict-digital",
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 22,
-      "title": "PROVISION OF CONSULTANCY SERVICES FOR STRATEGIC COMMUNICATION AND MEDIA MONITORING SERVICES",
-      "buyer": "Independent Electoral and Boundaries Commission",
-      "category": "Consultancy Services",
-      "deadline": "2026-11-20 11:00",
+      "rank": 38,
+      "title": "Supply and Delivery of assorted toners and Cartridges.",
+      "buyer": "Technical University of Kenya",
+      "category": "Goods",
+      "deadline": "2026-11-27 11:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312817",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "education"
+    },
+    {
+      "rank": 39,
+      "title": "Supply and Delivery of General Stationeries",
+      "buyer": "Technical University of Kenya",
+      "category": "Goods",
+      "deadline": "2026-11-27 11:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312818",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "education"
+    },
+    {
+      "rank": 40,
+      "title": "Supply and delivery of Branded Stationeries",
+      "buyer": "Technical University of Kenya",
+      "category": "Goods",
+      "deadline": "2026-11-27 11:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312819",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "education"
+    },
+    {
+      "rank": 41,
+      "title": "NCWSC/29/2026 - SUPPLY, DELIVERY, INSTALLATION AND CONFIGURATION OF SMART METERS FOR NAIROBI CITY WATER AND SEWERAGE COMPANY LIMITED",
+      "buyer": "Nairobi City Water & Sewerage Company LTD",
+      "category": "Goods",
+      "deadline": "2026-11-27 12:00",
       "scores": {
         "capability": 2,
-        "deadline_feasibility": 1,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 4,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/311896",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "other"
+    },
+    {
+      "rank": 42,
+      "title": "PROCUREMENT OF MEDICAL INSURANCE, GROUP LIFE COVER AND LAST EXPENSE",
+      "buyer": "Kitui County Government",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-11-27 12:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 3,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311532",
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312761",
       "source": "ppip",
-      "sector": "consultancy",
-      "buyer_level": "state-corporation"
+      "sector": "other",
+      "buyer_level": "county"
     },
     {
-      "rank": 23,
-      "title": "NCWSC/33/2026 - PROVISION OF ICT DATA CENTER SERVICING AND MAINTENANCE FOR NAIROBI CITY WATER & SEWERAGE COMPANY LIMITED",
-      "buyer": "Nairobi City Water & Sewerage Company LTD",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-20 12:00",
-      "scores": {
-        "capability": 3,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 4,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311904",
-      "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "other"
-    },
-    {
-      "rank": 24,
-      "title": "NCWSC/34/2026 - REQUEST FOR REPAIR WORKS FOR DATA CENTER HIREF COOLING SYSTEM",
-      "buyer": "Nairobi City Water & Sewerage Company LTD",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-20 12:00",
-      "scores": {
-        "capability": 3,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 4,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311910",
-      "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "other"
-    },
-    {
-      "rank": 25,
+      "rank": 43,
       "title": "PROVISION OF STAFF MEDICAL INSURANCE COVER",
       "buyer": "Makueni County Government",
       "category": "Non Consultancy Services",
@@ -506,7 +848,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 26,
+      "rank": 44,
       "title": "PROVISION OF SANITATION AND DISPOSAL SERVICES",
       "buyer": "COAST INSTITUTE OF TECHNOLOGY",
       "category": "Non Consultancy Services",
@@ -525,7 +867,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 27,
+      "rank": 45,
       "title": "PROVISION OF INSURANCE SERVICES",
       "buyer": "COAST INSTITUTE OF TECHNOLOGY",
       "category": "Non Consultancy Services",
@@ -544,7 +886,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 28,
+      "rank": 46,
       "title": "Provision of maintenance, repairs and servicing of motor vehicles-Framework agreement",
       "buyer": "County Assembly of Nyandarua",
       "category": "Non Consultancy Services",
@@ -563,7 +905,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 29,
+      "rank": 47,
       "title": "Provision of hotel services, conference facilities and outside catering-Framework agreement",
       "buyer": "County Assembly of Nyandarua",
       "category": "Non Consultancy Services",
@@ -582,7 +924,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 30,
+      "rank": 48,
       "title": "Provision of generator repair, services and maintenance-Framework agreement",
       "buyer": "County Assembly of Nyandarua",
       "category": "Non Consultancy Services",
@@ -601,7 +943,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 31,
+      "rank": 49,
       "title": "PROVISION OF AN ELECTRONIC DOCUMENT AND RECORDS MANAGEMENT SYSTEM",
       "buyer": "Office of the Auditor General",
       "category": "Non Consultancy Services",
@@ -620,7 +962,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 32,
+      "rank": 50,
       "title": "NCWSC/39/2026 - PROPOSED KABETE BACK WASH WATER RECIRCULATION SYSTEM (RESERVED FOR YOUTH, WOMEN AND PERSONS WITH DISABILITY) (RE-ADVERTISEMENT)",
       "buyer": "Nairobi City Water & Sewerage Company LTD",
       "category": "Works",
@@ -637,348 +979,6 @@
       "source": "ppip",
       "sector": "ict-digital",
       "buyer_level": "other"
-    },
-    {
-      "rank": 33,
-      "title": "Registration of Suppliers for supply and delivery of goods, works and services for FY 2026/27 and 2027/28",
-      "buyer": "National Construction Authority",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 14:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311319",
-      "source": "ppip",
-      "sector": "goods-supplies",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 34,
-      "title": "PROVISION OF INSURANCE SERVICES FOR MOTOR VEHICLE, MOTORCYCLE AND MOTOR BOAT",
-      "buyer": "LAMU EAST NG-CDF",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-24 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313118",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "ngcdf"
-    },
-    {
-      "rank": 35,
-      "title": "PROVISION OF GENERAL INSURANCE COVER.",
-      "buyer": "LAMU EAST NG-CDF",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-24 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313120",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "ngcdf"
-    },
-    {
-      "rank": 36,
-      "title": "DESIGN, SUPPLY, IMPLEMENTATION, MIGRATION AND COMMISSIONING OF A VIRTUALIZED ENVIRONMENT FOR CENTRAL BANK OF KENYA- RE-ADVERTISEMENT.",
-      "buyer": "Central Bank of Kenya",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-24 10:30",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311302",
-      "source": "ppip",
-      "sector": "goods-supplies",
-      "buyer_level": "other"
-    },
-    {
-      "rank": 37,
-      "title": "PROPOSED SOLAR PHOTOVOLTAIC WORKS",
-      "buyer": "BONDO TECHNICAL TRAINING INSTITUTE",
-      "category": "Works",
-      "deadline": "2026-11-25 10:00",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/312497",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "other"
-    },
-    {
-      "rank": 38,
-      "title": "CONSTRUCTION TO COMPLETION OF 3,619 SQUARE METERS CABRO PAVING WORKS AT MPEKETONI GIRLS SECONDARY SCHOOL.",
-      "buyer": "NG- CDF LAMU WEST CONSTITUENCY",
-      "category": "Works",
-      "deadline": "2026-11-25 10:00",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313391",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "ngcdf"
-    },
-    {
-      "rank": 39,
-      "title": "VARIOUS CATEGORIES OF INSURANCE SERVICES",
-      "buyer": "NG-CDF BOARD",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-25 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313572",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "ngcdf"
-    },
-    {
-      "rank": 40,
-      "title": "PROPOSED REPAIR AND RENOVATION OF STAFF CAFETERIA AT NEW ASSEMBLY BUILDING",
-      "buyer": "County Assembly Of Turkana",
-      "category": "Works",
-      "deadline": "2026-11-25 10:30",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313430",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 41,
-      "title": "PROPOSED CAR PARK AT THE NEW ASSEMBLY BUILDING",
-      "buyer": "County Assembly Of Turkana",
-      "category": "Works",
-      "deadline": "2026-11-25 10:30",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313453",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 42,
-      "title": "MULTINATIONAL HORN OF AFRICA ISIOLO – MANDERA CORRIDOR:CONSULTING SERVICES FOR IRAP STAR RATING ASSESSMENT & ROAD SAFETY AUDIT OF SELECT MAJOR CORRIDORS (2,500 KM) AND INSTITUTIONAL SUPPORT ON DEVELOPMENT OF KENYA ROAD ASSESSMENT PROGRAM (KenRAP)",
-      "buyer": "Kenya National Highway Authority",
-      "category": "Consultancy Services",
-      "deadline": "2026-11-25 11:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/310402",
-      "source": "ppip",
-      "sector": "consultancy",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 43,
-      "title": "Framework - Hire of Machinery & Solid Waste Management",
-      "buyer": "Nyandarua County Government",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-25 11:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313044",
-      "source": "ppip",
-      "sector": "goods-supplies",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 44,
-      "title": "Request for Proposal for the Management, Operation and Maintenance Services of Green park Terminus Pedestrian Underpass Road Facilities at Haile Selassie Roundabout, Nairobi Central Business District (CBD)",
-      "buyer": "Kenya National Highway Authority",
-      "category": "Consultancy Services",
-      "deadline": "2026-11-25 11:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313923",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 45,
-      "title": "Tender for the Provision of General Insurance Cover",
-      "buyer": "Nakuru County Government",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-26 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313676",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 46,
-      "title": "Tender for the Provision of Group Life Cover",
-      "buyer": "Nakuru County Government",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-26 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 2,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/313678",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 47,
-      "title": "PROPOSED RENOVATION TO COMPLETION OF ELEVEN CLASSROOMS",
-      "buyer": "KIPIPIRI NGCDF",
-      "category": "Works",
-      "deadline": "2026-11-20 10:00",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/311697",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "ngcdf"
-    },
-    {
-      "rank": 48,
-      "title": "CONSTRUCTION OF KABUYUNI WATER PAN IN MACKNNOON WARD",
-      "buyer": "Kwale County Government",
-      "category": "Works",
-      "deadline": "2026-11-20 10:28",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/312824",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 49,
-      "title": "REHABILITATION OF CHANYIRO DAM IN MKONGANI WARD",
-      "buyer": "Kwale County Government",
-      "category": "Works",
-      "deadline": "2026-11-20 10:30",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/312827",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 50,
-      "title": "PROPOSED CONSTRUCTION OF TREATMENT PLANT AND DISTRIBUTION OF WATER AT UMOJA DAM IN MWERENI WARD",
-      "buyer": "Kwale County Government",
-      "category": "Works",
-      "deadline": "2026-11-20 10:30",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/312828",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "county"
     }
   ],
   "top_picks": [
