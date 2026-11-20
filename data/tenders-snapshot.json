@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-20T06:03:31+03:00",
+  "generated_at": "2026-11-20T09:04:07+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 209.8,
-    "http_requests": 41,
+    "elapsed_seconds": 246.2,
+    "http_requests": 42,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 210s < 600s)"
+    "budget_status": "within cap (elapsed 246s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 480 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 495 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -849,6 +849,25 @@
     },
     {
       "rank": 44,
+      "title": "Request for Proposal for the Management, Operation and Maintenance Services of Green park Terminus Pedestrian Underpass Road Facilities at Haile Selassie Roundabout, Nairobi Central Business District (CBD)",
+      "buyer": "Kenya National Highway Authority",
+      "category": "Consultancy Services",
+      "deadline": "2026-11-25 11:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/313923",
+      "source": "ppip",
+      "sector": "works-infrastructure",
+      "buyer_level": "state-corporation"
+    },
+    {
+      "rank": 45,
       "title": "Tender for the Provision of General Insurance Cover",
       "buyer": "Nakuru County Government",
       "category": "Non Consultancy Services",
@@ -867,7 +886,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 45,
+      "rank": 46,
       "title": "Tender for the Provision of Group Life Cover",
       "buyer": "Nakuru County Government",
       "category": "Non Consultancy Services",
@@ -886,7 +905,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 46,
+      "rank": 47,
       "title": "PROPOSED RENOVATION TO COMPLETION OF ELEVEN CLASSROOMS",
       "buyer": "KIPIPIRI NGCDF",
       "category": "Works",
@@ -905,7 +924,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 47,
+      "rank": 48,
       "title": "CONSTRUCTION OF KABUYUNI WATER PAN IN MACKNNOON WARD",
       "buyer": "Kwale County Government",
       "category": "Works",
@@ -924,7 +943,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 48,
+      "rank": 49,
       "title": "REHABILITATION OF CHANYIRO DAM IN MKONGANI WARD",
       "buyer": "Kwale County Government",
       "category": "Works",
@@ -943,7 +962,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 49,
+      "rank": 50,
       "title": "PROPOSED CONSTRUCTION OF TREATMENT PLANT AND DISTRIBUTION OF WATER AT UMOJA DAM IN MWERENI WARD",
       "buyer": "Kwale County Government",
       "category": "Works",
@@ -960,25 +979,6 @@
       "source": "ppip",
       "sector": "works-infrastructure",
       "buyer_level": "county"
-    },
-    {
-      "rank": 50,
-      "title": "PROPOSED CONSTRUCTION OF A 260LM MASONRY PERIMETER WALL, SENTRY BOX AND GATE INSTALLATION AT MALAVA NG-CDF OFFICE IN MALAVA CONSTITUENCY",
-      "buyer": "NG-CDF MALAVA CONSTITUENCY",
-      "category": "Works",
-      "deadline": "2026-11-20 11:30",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 3
-      },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/312787",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "ngcdf"
     }
   ],
   "top_picks": [
