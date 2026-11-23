@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T18:00:33+03:00",
+  "generated_at": "2026-11-23T21:03:53+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 31.0,
-    "http_requests": 1,
+    "elapsed_seconds": 231.6,
+    "http_requests": 41,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 31s < 600s)"
+    "budget_status": "within cap (elapsed 232s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 456 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 475 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -849,6 +849,44 @@
     },
     {
       "rank": 44,
+      "title": "SUPPLY AND DELIVERY OF LIVESTOCK DRUGS",
+      "buyer": "Kwale County Government",
+      "category": "Goods",
+      "deadline": "2026-11-27 10:30",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/314429",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 45,
+      "title": "SUPPLY AND DELIVERY OF ACARICIDES",
+      "buyer": "Kwale County Government",
+      "category": "Goods",
+      "deadline": "2026-11-27 10:30",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/314437",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 46,
       "title": "Supply and Delivery of assorted toners and Cartridges.",
       "buyer": "Technical University of Kenya",
       "category": "Goods",
@@ -867,7 +905,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 45,
+      "rank": 47,
       "title": "Supply and Delivery of General Stationeries",
       "buyer": "Technical University of Kenya",
       "category": "Goods",
@@ -886,7 +924,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 46,
+      "rank": 48,
       "title": "Supply and delivery of Branded Stationeries",
       "buyer": "Technical University of Kenya",
       "category": "Goods",
@@ -905,7 +943,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 47,
+      "rank": 49,
       "title": "NCWSC/29/2026 - SUPPLY, DELIVERY, INSTALLATION AND CONFIGURATION OF SMART METERS FOR NAIROBI CITY WATER AND SEWERAGE COMPANY LIMITED",
       "buyer": "Nairobi City Water & Sewerage Company LTD",
       "category": "Goods",
@@ -924,7 +962,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 48,
+      "rank": 50,
       "title": "PROCUREMENT OF MEDICAL INSURANCE, GROUP LIFE COVER AND LAST EXPENSE",
       "buyer": "Kitui County Government",
       "category": "Non Consultancy Services",
@@ -940,44 +978,6 @@
       "url": "https://tenders.go.ke/tenders/312761",
       "source": "ppip",
       "sector": "other",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 49,
-      "title": "PROPOSED CONSTRUCTION OF NDU-K CAMP ADMINISTRATION BLOCK",
-      "buyer": "NATIONAL DEFENCE UNIVERSITY-KENYA",
-      "category": "Works",
-      "deadline": "2026-11-30 10:00",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311156",
-      "source": "ppip",
-      "sector": "works-infrastructure",
-      "buyer_level": "education"
-    },
-    {
-      "rank": 50,
-      "title": "CONSTRUCTION OF NEW INPATIENT BLOCK AT NYAMACHE LEVEL IV HOSPITAL",
-      "buyer": "Kisii County Government",
-      "category": "Works",
-      "deadline": "2026-11-30 10:00",
-      "scores": {
-        "capability": 0,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/312672",
-      "source": "ppip",
-      "sector": "works-infrastructure",
       "buyer_level": "county"
     }
   ],
