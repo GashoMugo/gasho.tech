@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T12:00:36+03:00",
+  "generated_at": "2026-11-23T15:03:37+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 33.5,
-    "http_requests": 1,
+    "elapsed_seconds": 215.5,
+    "http_requests": 41,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 34s < 600s)"
+    "budget_status": "within cap (elapsed 215s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 497 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 456 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -51,22 +51,22 @@
     },
     {
       "rank": 2,
-      "title": "TENDER FOR THE SUPPLY, INSTALLATION, CONFIGURATION, INTEGRATION, DATA MIGRATION, TESTING, TRAINING, COMMISSIONING, SUPPORT & MAINTENANCE OF AN INTEGRATED COUNTY REVENUE MANAGEMENT INFOMATION SYSTEM (CRMIS) FOR THE COUNTY GOVERNMENT OF MAKUENI",
-      "buyer": "Makueni County Government",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 10:00",
+      "title": "Construction of a Basic Model Digital Hub at Central Karachuonyo Digital Hub",
+      "buyer": "KARACHUONYO NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-30 11:00",
       "scores": {
-        "capability": 3,
-        "deadline_feasibility": 1,
+        "capability": 2,
+        "deadline_feasibility": 3,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 3
       },
-      "total": 14,
-      "url": "https://tenders.go.ke/tenders/311622",
+      "total": 15,
+      "url": "https://tenders.go.ke/tenders/314201",
       "source": "ppip",
       "sector": "ict-digital",
-      "buyer_level": "county"
+      "buyer_level": "ngcdf"
     },
     {
       "rank": 3,
@@ -127,6 +127,25 @@
     },
     {
       "rank": 6,
+      "title": "Provision of Security Guarding Services",
+      "buyer": "University of Kabianga",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-11-30 11:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 14,
+      "url": "https://tenders.go.ke/tenders/313746",
+      "source": "ppip",
+      "sector": "security-facility",
+      "buyer_level": "education"
+    },
+    {
+      "rank": 7,
       "title": "TENDER FOR PROPOSED ENHANCEMENTS AND IMPROVEMENT OF ELECTRICAL POWER SYSTEMS AND ASSOCIATED DATA CENTRE WORKS AT KISUMU BRANCH FOR CENTRAL BANK OF KENYA",
       "buyer": "Central Bank of Kenya",
       "category": "Works",
@@ -145,7 +164,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 7,
+      "rank": 8,
       "title": "\"MULTINATIONAL HORN OF AFRICA ISIOLO – MANDERA CORRIDOR: EL WAK – RHAMU ROAD UPGRADING PROJECT CONSULTANCY SERVICES FOR SECURITY LIAISON (INDIVIDUAL CONSULTANT)\"",
       "buyer": "Kenya National Highway Authority",
       "category": "Consultancy Services",
@@ -164,7 +183,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "title": "DEVELOPMENT OF AI COMPETENCY FRAMEWORKS FOR KENYA’S ED-UCATION SYSTEM (CONSULTING SERVICES)",
       "buyer": "ICT Authority",
       "category": "Consultancy Services",
@@ -183,7 +202,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "title": "PROCUREMENT OF SUB-TRANSMISSION NETWORK TOOLS",
       "buyer": "Kenya Power & Lighting Company",
       "category": "Goods",
@@ -202,7 +221,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 10,
+      "rank": 11,
       "title": "EXPRESSION OF INTEREST FOR PROVISION OF ENTERPRISE RESOURCE PLANNING SYSTEM AND IMPLEMENTATION SERVICES FOR CENTRAL BANK OF KENYA",
       "buyer": "Central Bank of Kenya",
       "category": "Consultancy Services",
@@ -221,7 +240,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR JUJA MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -240,7 +259,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 12,
+      "rank": 13,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KARURI MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -259,7 +278,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 13,
+      "rank": 14,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KIAMBU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -278,7 +297,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 14,
+      "rank": 15,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KIKUYU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -297,7 +316,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 15,
+      "rank": 16,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR LIMURU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -316,7 +335,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 16,
+      "rank": 17,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR RUIRU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -335,7 +354,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 17,
+      "rank": 18,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR THIKA MUNICIPAL",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -354,7 +373,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 18,
+      "rank": 19,
       "title": "PROPOSED CONSTRUCTION OF PERIMETER FENCE, GUARD HOUSE, CABRO WORKS. FRONT CAR PARKING, UNDERGROUND WATER TANK, ELEVATED WATER TOWER, SOLARIZATION AND OTHER AUXILARY WORKS AT HUDUMA JITUME DIGITAL HAB IN LAFEY CONSTITUENCY",
       "buyer": "Mandera County Government",
       "category": "Works",
@@ -373,7 +392,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 19,
+      "rank": 20,
       "title": "COMPREHENSIVE MAINTENANCE OF KISUMU DATA CENTRE SUPPORT INFRASTRUCTURE INCLUDING CLEANING FOR CENTRAL BANK OF KENYA FOR A PERIOD OF THREE (3) YEARS",
       "buyer": "Central Bank of Kenya",
       "category": "Non Consultancy Services",
@@ -392,80 +411,61 @@
       "buyer_level": "other"
     },
     {
-      "rank": 20,
-      "title": "PROVISION OF SECURITY SERVICES",
-      "buyer": "COAST INSTITUTE OF TECHNOLOGY",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 10:00",
-      "scores": {
-        "capability": 2,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311939",
-      "source": "ppip",
-      "sector": "security-facility",
-      "buyer_level": "education"
-    },
-    {
       "rank": 21,
-      "title": "PROVISION OF PROJECT MANAGEMENT SERVICES FOR THE GRANULAR DATA INTEGRATION (GDI) PROJECT FOR CENTRAL BANK OF KENYA",
-      "buyer": "Central Bank of Kenya",
+      "title": "CONSULTANCY SERVICES FOR VARIOUS-K-WASH PROJECTS",
+      "buyer": "Bomet County Government",
       "category": "Consultancy Services",
-      "deadline": "2026-11-23 10:30",
+      "deadline": "2026-11-27 12:00",
       "scores": {
         "capability": 2,
-        "deadline_feasibility": 1,
+        "deadline_feasibility": 2,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/309683",
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/312820",
       "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "other"
+      "sector": "consultancy",
+      "buyer_level": "county"
     },
     {
       "rank": 22,
-      "title": "SUPPLY, INSTALLATION, COMMISSIONING AND MAINTENANCE OF A REVENUE COLLECTION AND MANAGEMENT SYSTEM",
-      "buyer": "Nyamira County Government",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 10:30",
+      "title": "Construction of 45 Capacity Science Laboratory at Dr. Adhuu Awiti Secondary School",
+      "buyer": "KARACHUONYO NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-30 11:00",
       "scores": {
-        "capability": 2,
-        "deadline_feasibility": 1,
+        "capability": 0,
+        "deadline_feasibility": 3,
         "buyer_credibility": 5,
         "value": 2,
-        "competition": 2
+        "competition": 3
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311810",
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/314205",
       "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "county"
+      "sector": "works-infrastructure",
+      "buyer_level": "ngcdf"
     },
     {
       "rank": 23,
-      "title": "Provision of maintenance, repairs & servicing of computers, laptops, desktops, printers, projectors UPS, cameras, TVs, tablets and other related accessories-Framework agreement",
-      "buyer": "County Assembly of Nyandarua",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 11:00",
+      "title": "Construction of Five Roomed Administration Block at Omindi Secondary School",
+      "buyer": "KARACHUONYO NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-30 11:00",
       "scores": {
-        "capability": 2,
-        "deadline_feasibility": 1,
+        "capability": 0,
+        "deadline_feasibility": 3,
         "buyer_credibility": 5,
         "value": 2,
-        "competition": 2
+        "competition": 3
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/311816",
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/314206",
       "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "county"
+      "sector": "works-infrastructure",
+      "buyer_level": "ngcdf"
     },
     {
       "rank": 24,
@@ -906,78 +906,78 @@
     },
     {
       "rank": 47,
-      "title": "PROVISION OF STAFF MEDICAL INSURANCE COVER",
-      "buyer": "Makueni County Government",
+      "title": "NCWSC/29/2026 - SUPPLY, DELIVERY, INSTALLATION AND CONFIGURATION OF SMART METERS FOR NAIROBI CITY WATER AND SEWERAGE COMPANY LIMITED",
+      "buyer": "Nairobi City Water & Sewerage Company LTD",
+      "category": "Goods",
+      "deadline": "2026-11-27 12:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 4,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/311896",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "other"
+    },
+    {
+      "rank": 48,
+      "title": "PROCUREMENT OF MEDICAL INSURANCE, GROUP LIFE COVER AND LAST EXPENSE",
+      "buyer": "Kitui County Government",
       "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 10:00",
+      "deadline": "2026-11-27 12:00",
       "scores": {
         "capability": 1,
-        "deadline_feasibility": 1,
+        "deadline_feasibility": 2,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/311567",
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/312761",
       "source": "ppip",
       "sector": "other",
       "buyer_level": "county"
     },
     {
-      "rank": 48,
-      "title": "PROVISION OF SANITATION AND DISPOSAL SERVICES",
-      "buyer": "COAST INSTITUTE OF TECHNOLOGY",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 1,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/311940",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "education"
-    },
-    {
       "rank": 49,
-      "title": "PROVISION OF INSURANCE SERVICES",
-      "buyer": "COAST INSTITUTE OF TECHNOLOGY",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 10:00",
+      "title": "PROPOSED CONSTRUCTION OF NDU-K CAMP ADMINISTRATION BLOCK",
+      "buyer": "NATIONAL DEFENCE UNIVERSITY-KENYA",
+      "category": "Works",
+      "deadline": "2026-11-30 10:00",
       "scores": {
-        "capability": 1,
-        "deadline_feasibility": 1,
+        "capability": 0,
+        "deadline_feasibility": 3,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/311941",
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/311156",
       "source": "ppip",
-      "sector": "other",
+      "sector": "works-infrastructure",
       "buyer_level": "education"
     },
     {
       "rank": 50,
-      "title": "Provision of maintenance, repairs and servicing of motor vehicles-Framework agreement",
-      "buyer": "County Assembly of Nyandarua",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-11-23 11:00",
+      "title": "CONSTRUCTION OF NEW INPATIENT BLOCK AT NYAMACHE LEVEL IV HOSPITAL",
+      "buyer": "Kisii County Government",
+      "category": "Works",
+      "deadline": "2026-11-30 10:00",
       "scores": {
-        "capability": 1,
-        "deadline_feasibility": 1,
+        "capability": 0,
+        "deadline_feasibility": 3,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
-      "total": 11,
-      "url": "https://tenders.go.ke/tenders/311817",
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/312672",
       "source": "ppip",
-      "sector": "other",
+      "sector": "works-infrastructure",
       "buyer_level": "county"
     }
   ],
