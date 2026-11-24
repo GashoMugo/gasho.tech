@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-24T18:03:00+03:00",
+  "generated_at": "2026-11-24T21:05:05+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 178.5,
-    "http_requests": 41,
+    "elapsed_seconds": 302.5,
+    "http_requests": 42,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 178s < 600s)"
+    "budget_status": "within cap (elapsed 303s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 473 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 493 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -89,25 +89,6 @@
     },
     {
       "rank": 4,
-      "title": "Development of a National Monitoring Implementation Framework for Satellite and Non-Terresterial Technologies",
-      "buyer": "ICT Authority",
-      "category": "Consultancy Services",
-      "deadline": "2026-12-02 10:00",
-      "scores": {
-        "capability": 2,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 14,
-      "url": "https://tenders.go.ke/tenders/313196",
-      "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 5,
       "title": "DEVELOPMENT OF AI COMPETENCY FRAMEWORKS FOR KENYA’S ED-UCATION SYSTEM (CONSULTING SERVICES)",
       "buyer": "ICT Authority",
       "category": "Consultancy Services",
@@ -126,7 +107,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 6,
+      "rank": 5,
       "title": "INSTALLATION OF LAN IN TO A BASIC DIGITAL HUB AS PER THE MINISTRY OF INFORMATION, COMMUNICATION AND DIGITAL ECONOMY GUIDELINES, PURCHASE OF 2 DESKS, 2 NO. EXECUTIVE CHAIRS AND 4NO. VISITORS CHAIRS FOR 2 OFFICES, PURCHASE OF 4 BENCHES TO ACCOMMODATE 8 PEOPLE, INSTALLATION OF 40 COMPUTER WORKSTATIONS IN THE MEETING HALL ,BURGLAR PROOFING TO DOORS AND WINDOWS, SUPPLY AND INSTALLATION OF 10,000LTRS WATER TANK, MASONRY BASE CONSTRUCTION, CCTV CAMERA INSTALLATION AT KANGUNDO DIGITAL HUB",
       "buyer": "NG CDF KANGUNDO",
       "category": "Goods",
@@ -145,7 +126,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 7,
+      "rank": 6,
       "title": "INSTALLATION OF LAN IN TO A BASIC DIGITAL HUB AS PER THE MINISTRY OF INFORMATION, COMMUNICATION AND DIGITAL ECONOMY GUIDELINES, PURCHASE OF 2 DESKS, 2 NO. EXECUTIVE CHAIRS AND 4NO. VISITORS CHAIRS FOR 2 OFFICES, PURCHASE OF 4 BENCHES TO ACCOMMODATE 8 PEOPLE, INSTALLATION OF 40 COMPUTER WORKSTATIONS IN THE MEETING HALL ,BURGLAR PROOFING TO DOORS AND WINDOWS, SUPPLY AND INSTALLATION OF 10,000LTRS WATER TANK, MASONRY BASE CONSTRUCTION, CCTV CAMERA INSTALLATION AT KAKUYUNI DIGITAL HUB",
       "buyer": "NG CDF KANGUNDO",
       "category": "Goods",
@@ -162,6 +143,25 @@
       "source": "ppip",
       "sector": "ict-digital",
       "buyer_level": "ngcdf"
+    },
+    {
+      "rank": 7,
+      "title": "FOR PROCUREMENT OF DATA CONNECTIVITY SERVICES FOR WORKFORCE MANAGEMENT TOOLS",
+      "buyer": "Kenya Power & Lighting Company",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-11-26 10:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 1,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/314706",
+      "source": "ppip",
+      "sector": "ict-digital",
+      "buyer_level": "other"
     },
     {
       "rank": 8,
