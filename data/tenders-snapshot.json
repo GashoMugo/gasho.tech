@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-24T15:00:34+03:00",
+  "generated_at": "2026-11-24T18:03:00+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 31.9,
-    "http_requests": 1,
+    "elapsed_seconds": 178.5,
+    "http_requests": 41,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 32s < 600s)"
+    "budget_status": "within cap (elapsed 178s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 453 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 473 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -412,25 +412,6 @@
     },
     {
       "rank": 21,
-      "title": "Provision of hotel, accommodation and conference services",
-      "buyer": "Coast General Teaching and Referral Hospital",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-02 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/312376",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 22,
       "title": "Provision of general service and maintenance of motor vehicles and generators",
       "buyer": "Coast General Teaching and Referral Hospital",
       "category": "Non Consultancy Services",
@@ -449,7 +430,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 23,
+      "rank": 22,
       "title": "PROVISION OF MOTOR VEHICLE INSURANCE COVER FOR THE FINANCIAL YEAR 2026-2027",
       "buyer": "County Assembly Of Nyeri",
       "category": "Non Consultancy Services",
@@ -468,7 +449,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 24,
+      "rank": 23,
       "title": "MECHANICAL EXCAVATION TO COMPLETION OF A SECURITY TRENCH 600M AT PANGANI POLICE STATION.",
       "buyer": "NG- CDF LAMU WEST CONSTITUENCY",
       "category": "Works",
@@ -487,7 +468,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 25,
+      "rank": 24,
       "title": "SUPPLY AND DELIVERY OF MOBILE PHONES, TWO-WAY HANDHELD RADIO COMMUNICATION DEVICES, WASHING MACHINES, TELEVISION SET AND DIGITAL SINGLE -LENS REFLEX(DSLR) CAMERAS",
       "buyer": "Bungoma County Government",
       "category": "Goods",
@@ -506,7 +487,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 26,
+      "rank": 25,
       "title": "PROPOSED NON-CONSULTANCY SERVICES FOR THE KENYA GOLD SUMMIT & EXPO 2026-WESTERN KENYA EDITION",
       "buyer": "Kakamega County Government",
       "category": "Non Consultancy Services",
@@ -525,7 +506,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 27,
+      "rank": 26,
       "title": "PROCUREMENT OF SUB-TRANSMISSION NETWORK TOOLS",
       "buyer": "Kenya Power & Lighting Company",
       "category": "Goods",
@@ -544,7 +525,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 28,
+      "rank": 27,
       "title": "EXPRESSION OF INTEREST FOR PROVISION OF ENTERPRISE RESOURCE PLANNING SYSTEM AND IMPLEMENTATION SERVICES FOR CENTRAL BANK OF KENYA",
       "buyer": "Central Bank of Kenya",
       "category": "Consultancy Services",
@@ -563,7 +544,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 29,
+      "rank": 28,
       "title": "PROPOSED PURCHASE OF FORTY-SIX (46) SEATER SEMI-LUXURY KMTC BUS FOR KEGONGA KENYA MEDICAL TRAINING COLLEGE IN KURIA EAST CONSTITUENCY",
       "buyer": "KURIA EAST NG-CDF",
       "category": "Goods",
@@ -582,7 +563,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 30,
+      "rank": 29,
       "title": "SUPPLY, DELVERY, INSTALLATION, TESTING, TRAINING AND COMMISSIONING OF SMART WATER METERS",
       "buyer": "Kiambere-Mwingi Water and Sanitation Company",
       "category": "Works",
@@ -601,7 +582,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 31,
+      "rank": 30,
       "title": "Purchase of a 51 seater school bus",
       "buyer": "Subukia NG-CDF",
       "category": "Works",
@@ -620,7 +601,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 32,
+      "rank": 31,
       "title": "Purchase of a 51-seater school bus",
       "buyer": "Subukia NG-CDF",
       "category": "Works",
@@ -639,7 +620,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 33,
+      "rank": 32,
       "title": "Purchase of a 51-seater school bus",
       "buyer": "Subukia NG-CDF",
       "category": "Works",
@@ -658,7 +639,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 34,
+      "rank": 33,
       "title": "Purchase of a 51-seater school bus",
       "buyer": "Subukia NG-CDF",
       "category": "Works",
@@ -677,7 +658,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 35,
+      "rank": 34,
       "title": "PROPOSED CONSTRUCTION OF PERIMETER FENCE, GUARD HOUSE, CABRO WORKS. FRONT CAR PARKING, UNDERGROUND WATER TANK, ELEVATED WATER TOWER, SOLARIZATION AND OTHER AUXILARY WORKS AT HUDUMA JITUME DIGITAL HAB IN LAFEY CONSTITUENCY",
       "buyer": "LAFEY NG-CDF",
       "category": "Works",
@@ -696,7 +677,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 36,
+      "rank": 35,
       "title": "Construction to completion of 4 classrooms on a one storey building inclusive of a ramp and a staircase and purchase of 160 lockers and desks. At Bobaracho Secondary School",
       "buyer": "NG-CDF NYARIBARI CHACHE CONSTITUENCY",
       "category": "Works",
@@ -715,7 +696,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 37,
+      "rank": 36,
       "title": "Construction to completion of 4 classrooms on a one storey building inclusive of a ramp and a staircase and purchase of 160 lockers and desks at Kiogoro Primary School",
       "buyer": "NG-CDF NYARIBARI CHACHE CONSTITUENCY",
       "category": "Works",
@@ -734,7 +715,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 38,
+      "rank": 37,
       "title": "Completion of 120 bed capacity dormitory on a one storey building; installation of first floor suspended slab, installation of 1st floor columns, walling of the first floor, roofing, ceiling, installation of a ramp and a staircase, installation of doors and windows on ground and first floor, tiling on both floors, plastering on both floors, electrical works plumbing works and painting at Riondonga Secondary school",
       "buyer": "NG-CDF NYARIBARI CHACHE CONSTITUENCY",
       "category": "Works",
@@ -753,7 +734,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 39,
+      "rank": 38,
       "title": "Completion of one classroom on the ground floor of a one storey building: partial demolition of brick wall, walling, installation of doors and windows, electrical works, plastering, staircase finishes, tiling and painting and construction to completion of four classrooms on the first floor: installation of columns, walling, ring beam, roofing, installation of doors and windows, electrical works, plastering, tiling and painting at Riamokwobe SDA Comprehensive School",
       "buyer": "NG-CDF NYARIBARI CHACHE CONSTITUENCY",
       "category": "Works",
@@ -772,7 +753,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 40,
+      "rank": 39,
       "title": "SUPPLY AND DELIVERY OF LIVESTOCK DRUGS",
       "buyer": "Kwale County Government",
       "category": "Goods",
@@ -791,7 +772,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 41,
+      "rank": 40,
       "title": "SUPPLY AND DELIVERY OF ACARICIDES",
       "buyer": "Kwale County Government",
       "category": "Goods",
@@ -810,7 +791,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 42,
+      "rank": 41,
       "title": "Supply and Delivery of assorted toners and Cartridges.",
       "buyer": "Technical University of Kenya",
       "category": "Goods",
@@ -829,7 +810,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 43,
+      "rank": 42,
       "title": "Supply and Delivery of General Stationeries",
       "buyer": "Technical University of Kenya",
       "category": "Goods",
@@ -848,7 +829,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 44,
+      "rank": 43,
       "title": "Supply and delivery of Branded Stationeries",
       "buyer": "Technical University of Kenya",
       "category": "Goods",
@@ -867,7 +848,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 45,
+      "rank": 44,
       "title": "NCWSC/29/2026 - SUPPLY, DELIVERY, INSTALLATION AND CONFIGURATION OF SMART METERS FOR NAIROBI CITY WATER AND SEWERAGE COMPANY LIMITED",
       "buyer": "Nairobi City Water & Sewerage Company LTD",
       "category": "Goods",
@@ -886,7 +867,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 46,
+      "rank": 45,
       "title": "PROCUREMENT OF MEDICAL INSURANCE, GROUP LIFE COVER AND LAST EXPENSE",
       "buyer": "Kitui County Government",
       "category": "Non Consultancy Services",
@@ -903,6 +884,25 @@
       "source": "ppip",
       "sector": "other",
       "buyer_level": "county"
+    },
+    {
+      "rank": 46,
+      "title": "PROVISION OF STATUTORY OCCUPATIONAL SAFETY AND HEALTH (OSH) MEDICAL EXAMINATION",
+      "buyer": "Kenya Power & Lighting Company",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-11-30 10:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/314612",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "other"
     },
     {
       "rank": 47,
