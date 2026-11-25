@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T09:04:19+03:00",
+  "generated_at": "2026-11-25T12:00:55+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 256.9,
-    "http_requests": 42,
+    "elapsed_seconds": 53.5,
+    "http_requests": 12,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 257s < 600s)"
+    "budget_status": "within cap (elapsed 53s < 600s)"
   },
   "source_health": [
     {
@@ -24,9 +24,9 @@
     },
     {
       "source": "Kenya Gazette (kenyalaw.org archive)",
-      "status": "failed",
+      "status": "degraded",
       "records": 0,
-      "detail": "gazette index fetch failed (FetchError: disallowed by robots.txt: https://kenyalaw.org/gazettes/)"
+      "detail": "index lists years; following current-year link https://kenyalaw.org/gazettes/2026 · gazette index fetched; 201 issue links found, monitoring latest 3 · issue page https://kenyalaw.org/akn/ke/officialGazette/2026-11-20/207/eng@2026-11-20 failed (FetchError: failed after 3 attempt(s): https://kenyalaw.org/akn/ke/officialGazette/2026-11-20/207/eng@2026-11-20 (HTTP 202 for https://kenyalaw.org/akn/ke/"
     }
   ],
   "tenders": [
