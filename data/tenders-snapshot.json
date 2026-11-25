@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-25T06:03:09+03:00",
+  "generated_at": "2026-11-25T09:04:19+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 187.1,
-    "http_requests": 38,
+    "elapsed_seconds": 256.9,
+    "http_requests": 42,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 187s < 600s)"
+    "budget_status": "within cap (elapsed 257s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 493 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 494 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
