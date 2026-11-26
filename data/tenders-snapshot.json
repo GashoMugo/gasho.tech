@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-26T18:00:37+03:00",
+  "generated_at": "2026-11-26T21:02:11+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 34.5,
-    "http_requests": 3,
+    "elapsed_seconds": 129.8,
+    "http_requests": 39,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 35s < 600s)"
+    "budget_status": "within cap (elapsed 130s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 439 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 459 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -165,44 +165,6 @@
     },
     {
       "rank": 8,
-      "title": "PROVISION OF DATA WIPPING SOLUTION",
-      "buyer": "Kenya Ports Authority",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-04 10:00",
-      "scores": {
-        "capability": 2,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 14,
-      "url": "https://tenders.go.ke/tenders/313539",
-      "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 9,
-      "title": "PROPOSED ICT CENTRE COMPLEX AT GITHUMU BOYS HIGH SCHOOL",
-      "buyer": "GITHUMU BOYS SENIOR SCHOOL",
-      "category": "Works",
-      "deadline": "2026-12-04 10:00",
-      "scores": {
-        "capability": 2,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 14,
-      "url": "https://tenders.go.ke/tenders/314173",
-      "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "education"
-    },
-    {
-      "rank": 10,
       "title": "Provision of Security Guarding Services",
       "buyer": "University of Kabianga",
       "category": "Non Consultancy Services",
@@ -221,7 +183,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 11,
+      "rank": 9,
       "title": "PROVISION OF AN NTSA-ACCREDITED DRIVING SCHOOL TO TRAIN 600 BODA BODA RIDERS ACROSS ALL 8 SUB-COUNTIES IN KITUI COUNTY",
       "buyer": "Kitui County Government",
       "category": "Non Consultancy Services",
@@ -240,7 +202,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 12,
+      "rank": 10,
       "title": "Development of a National Monitoring Implementation Framework for Satellite and Non-Terresterial Technologies",
       "buyer": "ICT Authority",
       "category": "Consultancy Services",
@@ -259,7 +221,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 13,
+      "rank": 11,
       "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF THE COUNTY ASSEMBLY",
       "buyer": "County Assembly Of Kilifi",
       "category": "Non Consultancy Services",
@@ -278,7 +240,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 14,
+      "rank": 12,
       "title": "PROVISION OF MEDICAL INSURANCE COVER FOR STAFF OF THE COUNTY ASSEMBLY",
       "buyer": "County Assembly Of Kilifi",
       "category": "Non Consultancy Services",
@@ -297,7 +259,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 15,
+      "rank": 13,
       "title": "PROPOSED ADMINISTRATION OF THE KWALE COUNTY BIASHARA REVOLVING FUND",
       "buyer": "Kwale County Government",
       "category": "Consultancy Services",
@@ -316,7 +278,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 16,
+      "rank": 14,
       "title": "PROVISION OF PROFESSIONAL INDEMNITY COVER FOR HEALTH WORKERS",
       "buyer": "Kwale County Government",
       "category": "Non Consultancy Services",
@@ -335,7 +297,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 17,
+      "rank": 15,
       "title": "FRAMEWORK TENDER FOR LEASING OF MOTORVEHICLES",
       "buyer": "Judicial Service Commission",
       "category": "Non Consultancy Services",
@@ -354,7 +316,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 18,
+      "rank": 16,
       "title": "PROVISION OF STAFF GROUP LIFE INSURANCE COVER",
       "buyer": "National Social Security Fund",
       "category": "Non Consultancy Services",
@@ -373,7 +335,7 @@
       "buyer_level": "national"
     },
     {
-      "rank": 19,
+      "rank": 17,
       "title": "PROVISION OF STAFF MEDICAL INSURANCE COVER FOR THE FINANCING LOCALLY-LED CLIMATE ACTION (FLLoCA) PROGRAM FOR YEAR 2026- 2027",
       "buyer": "The National Treasury",
       "category": "Non Consultancy Services",
@@ -392,7 +354,26 @@
       "buyer_level": "national"
     },
     {
-      "rank": 20,
+      "rank": 18,
+      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF STAFF",
+      "buyer": "County Assembly Of Nakuru",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 11:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/315073",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 19,
       "title": "SUPPLY DELIVERY OF ACTELIC/PIRIMIPHOS METHYL UNDER 2 YEARS FRAMEWORK CONTRACT.",
       "buyer": "National Cereals and Produce Board",
       "category": "Goods",
@@ -411,7 +392,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 21,
+      "rank": 20,
       "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF STAFF THEIR DEPENDENTS AND UNIVERSITY COUNCIL MEMBERS",
       "buyer": "Moi University",
       "category": "Non Consultancy Services",
@@ -430,23 +411,42 @@
       "buyer_level": "education"
     },
     {
-      "rank": 22,
-      "title": "PREQUALIFICATION FOR THE PROVISION OF CYBERSECURITY TOOLS.",
-      "buyer": "State Department of Immigration, Border Control and citizen Services",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-04 10:00",
+      "rank": 21,
+      "title": "PROPOSED CONSTRUCTION OF OFFICE AT RABONDO CHIEF'S OFFICE",
+      "buyer": "AWENDO NGCDF",
+      "category": "Works",
+      "deadline": "2026-12-04 09:00",
       "scores": {
-        "capability": 2,
+        "capability": 0,
         "deadline_feasibility": 3,
-        "buyer_credibility": 4,
+        "buyer_credibility": 5,
         "value": 2,
-        "competition": 2
+        "competition": 3
       },
       "total": 13,
-      "url": "https://tenders.go.ke/tenders/313823",
+      "url": "https://tenders.go.ke/tenders/315087",
       "source": "ppip",
-      "sector": "other",
-      "buyer_level": "national"
+      "sector": "works-infrastructure",
+      "buyer_level": "ngcdf"
+    },
+    {
+      "rank": 22,
+      "title": "PROPOSED CONSTRUCTION OF OFFICE AT KOGELO CHIEF'S CAMP",
+      "buyer": "AWENDO NGCDF",
+      "category": "Works",
+      "deadline": "2026-12-04 09:30",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 3,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/315086",
+      "source": "ppip",
+      "sector": "works-infrastructure",
+      "buyer_level": "ngcdf"
     },
     {
       "rank": 23,
