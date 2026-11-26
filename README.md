@@ -150,6 +150,8 @@ Old `.html` URLs automatically redirect to new routes:
 | `/privacy_policy.html` | `/privacy` |
 | `/MyProfile/profile.html` | `/profile` |
 
+The legacy GitHub Pages files those URLs used to serve (root `*.html`, `images/`, `MyProfile/`, `CNAME`, `jquery.js`, `styles.css`, the chat-widget/mouse-trail/theme-toggle scripts) have been removed. Next.js serves `/images/*` from `public/images/` and generates `/sitemap.xml` and `/robots.txt` from `app/sitemap.ts` and `app/robots.ts`.
+
 ## Development
 
 ```bash
