@@ -39,14 +39,13 @@ const MAX_OUTPUT_TOKENS = 512;
 const NO_STORE = { 'Cache-Control': 'no-store' };
 
 /**
- * Origins this endpoint answers to. `gasho.tech` is the CNAME, the
- * `gashotech.com` pair is the marketing domain, and preview deployments are
- * added from the platform-provided hostnames plus the request's own origin (see
- * `allowedOrigins`). Anything else that sends an `Origin` is refused.
+ * Origins this endpoint answers to. `gashotech.com` is the marketing domain;
+ * `gasho.tech` is dead (NXDOMAIN) and is no longer trusted — a domain we don't
+ * control that resolves again must not get a CORS-readable response. Preview
+ * deployments are added from the platform-provided hostnames plus the request's
+ * own origin (see `allowedOrigins`). Anything else that sends an `Origin` is refused.
  */
 const FIXED_SITE_ORIGINS = [
-  'https://gasho.tech',
-  'https://www.gasho.tech',
   'https://gashotech.com',
   'https://www.gashotech.com',
 ];
