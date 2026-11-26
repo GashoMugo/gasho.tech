@@ -1,26 +1,26 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-26T03:03:18+03:00",
+  "generated_at": "2026-11-26T06:00:16+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 196.0,
-    "http_requests": 14,
+    "elapsed_seconds": 14.6,
+    "http_requests": 8,
     "records_scored": 0,
-    "records_excluded": 8,
-    "budget_status": "within cap (elapsed 196s < 600s)"
+    "records_excluded": 16,
+    "budget_status": "within cap (elapsed 15s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "failed",
       "records": 0,
-      "detail": "page 1 failed: FetchError: failed after 3 attempt(s): https://tenders.go.ke/api/active-tenders?page=1 (<urlopen error timed out>) · fetched 0 page(s) of ? active tenders (0 records parsed)"
+      "detail": "page 1 failed: FetchError: failed after 3 attempt(s): https://tenders.go.ke/api/active-tenders?page=1 (<urlopen error [Errno 113] No route to host>) · fetched 0 page(s) of ? active tenders (0 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
       "status": "degraded",
       "records": 0,
-      "detail": "kisumu-county: category discovery failed (FetchError: failed after 3 attempt(s): https://www.kisumu.go.ke/wp-json/wp/v2/categories?search=tender&per_page=20 (<urlopen error [Errno -3] Temporary failure in name resolution>)) · kajiado-county: category 'tenders' (8 posts), fetched 8, newest 2019-04-23, cutoff 2026-10-27"
+      "detail": "kisumu-county: category 'tender-notice' (8 posts), fetched 8, newest 2020-09-21, cutoff 2026-10-27 · kajiado-county: category 'tenders' (8 posts), fetched 8, newest 2019-04-23, cutoff 2026-10-27"
     },
     {
       "source": "Kenya Gazette (kenyalaw.org archive)",
