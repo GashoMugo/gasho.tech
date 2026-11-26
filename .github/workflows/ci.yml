@@ -1,5 +1,11 @@
 name: CI
 
+# Least privilege: every job here only reads the repo (checkout, npm ci, build).
+# Nothing uploads artifacts, comments on PRs or pushes, so the default token is
+# narrowed to what a compromised workflow step could do at worst.
+permissions:
+  contents: read
+
 # `pull_request` on every base branch, not only main/master: the stacked-PR
 # train (#40 → #41 → #42 → #43 …) targets other feature branches, so the unit
 # suite never ran for the PRs that most needed it.
