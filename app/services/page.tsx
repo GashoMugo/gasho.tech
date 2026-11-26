@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { services } from "@/data/services"
-import { Cog, RefreshCw, Lock, Cloud, PenTool, Headphones } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Services",
@@ -29,15 +28,6 @@ export const metadata: Metadata = {
   },
 }
 
-const iconMap: Record<string, React.ElementType> = {
-  Cog,
-  RefreshCw,
-  Lock,
-  Cloud,
-  PenTool,
-  Headphones,
-}
-
 export default function ServicesPage() {
   return (
     <div className="pt-20 pb-12">
@@ -55,7 +45,7 @@ export default function ServicesPage() {
         {/* Service Cards Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
-            const Icon = iconMap[service.icon.name] || Cog
+            const Icon = service.icon
             return (
               <Link
                 key={service.id}
