@@ -1,26 +1,26 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-26T21:02:11+03:00",
+  "generated_at": "2026-11-27T00:03:13+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 129.8,
-    "http_requests": 39,
+    "elapsed_seconds": 191.4,
+    "http_requests": 41,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 130s < 600s)"
+    "budget_status": "within cap (elapsed 191s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 459 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 480 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
       "status": "degraded",
       "records": 0,
-      "detail": "kisumu-county: category 'tender-notice' (8 posts), fetched 8, newest 2020-09-21, cutoff 2026-10-27 · kajiado-county: category 'tenders' (8 posts), fetched 8, newest 2019-04-23, cutoff 2026-10-27"
+      "detail": "kisumu-county: category 'tender-notice' (8 posts), fetched 8, newest 2020-09-21, cutoff 2026-10-28 · kajiado-county: category 'tenders' (8 posts), fetched 8, newest 2019-04-23, cutoff 2026-10-28"
     },
     {
       "source": "Kenya Gazette (kenyalaw.org archive)",
@@ -32,44 +32,6 @@
   "tenders": [
     {
       "rank": 1,
-      "title": "REQUEST FOR PROVISION OF CONSULTANCY SERVICES FOR INTERNATIONAL FINANCIAL REPROTING STANDARDS (IFRS) TECHNICAL REVIEW AND CYBERSECURITY AUDIT",
-      "buyer": "Central Bank of Kenya",
-      "category": "Consultancy Services",
-      "deadline": "2026-12-03 10:30",
-      "scores": {
-        "capability": 3,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 15,
-      "url": "https://tenders.go.ke/tenders/311089",
-      "source": "ppip",
-      "sector": "consultancy",
-      "buyer_level": "other"
-    },
-    {
-      "rank": 2,
-      "title": "PROVISION OF MOBILE APPLICATION MAINTENANCE AND SUPPORT SERVICES",
-      "buyer": "Kenya Ports Authority",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 22:00",
-      "scores": {
-        "capability": 3,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 15,
-      "url": "https://tenders.go.ke/tenders/313566",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 3,
       "title": "Renovation to completion of a 6 roomed office on the ground floor of a storey building into a digital hub as per ministry of information communication and digital economy guideline at Keumbu ICT Hub",
       "buyer": "NG-CDF NYARIBARI CHACHE CONSTITUENCY",
       "category": "Works",
@@ -88,7 +50,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 4,
+      "rank": 2,
       "title": "Construction of a Basic Model Digital Hub at Central Karachuonyo Digital Hub",
       "buyer": "KARACHUONYO NG-CDF",
       "category": "Works",
@@ -107,64 +69,45 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 5,
-      "title": "Tender for the request for proposal on Environmental and Social Impact Assessment (ESIA) consultancy for proposed investments under the Financing Locally-Led Climate Action (FLLoCA) Programme in Nakuru County.",
-      "buyer": "Nakuru County Government",
+      "rank": 3,
+      "title": "REQUEST FOR PROVISION OF CONSULTANCY SERVICES FOR INTERNATIONAL FINANCIAL REPROTING STANDARDS (IFRS) TECHNICAL REVIEW AND CYBERSECURITY AUDIT",
+      "buyer": "Central Bank of Kenya",
       "category": "Consultancy Services",
-      "deadline": "2026-12-03 10:00",
+      "deadline": "2026-12-03 10:30",
       "scores": {
-        "capability": 2,
-        "deadline_feasibility": 3,
+        "capability": 3,
+        "deadline_feasibility": 2,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
       "total": 14,
-      "url": "https://tenders.go.ke/tenders/314867",
+      "url": "https://tenders.go.ke/tenders/311089",
       "source": "ppip",
       "sector": "consultancy",
-      "buyer_level": "county"
+      "buyer_level": "other"
     },
     {
-      "rank": 6,
-      "title": "Framework Agreement for the supply & delivery of Public Address Systems (PAs)",
-      "buyer": "Nakuru County Government",
-      "category": "Goods",
-      "deadline": "2026-12-03 10:00",
+      "rank": 4,
+      "title": "PROVISION OF MOBILE APPLICATION MAINTENANCE AND SUPPORT SERVICES",
+      "buyer": "Kenya Ports Authority",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 22:00",
       "scores": {
-        "capability": 2,
-        "deadline_feasibility": 3,
+        "capability": 3,
+        "deadline_feasibility": 2,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
       "total": 14,
-      "url": "https://tenders.go.ke/tenders/314886",
+      "url": "https://tenders.go.ke/tenders/313566",
       "source": "ppip",
-      "sector": "goods-supplies",
-      "buyer_level": "county"
+      "sector": "other",
+      "buyer_level": "state-corporation"
     },
     {
-      "rank": 7,
-      "title": "DESIGN, SUPPLY, DELIVERY, INSTALLATION, TESTING AND COMMISSIONING OF GRID-TIED SOLAR POWER SYSTEM AND CHILLING ACCESSORIES AT MERU CENTRAL DAIRY CO OPERATIVE UNION LTD IN NTIMA EAST WARD, IMENTI NORTH SUBCOUNTY AND SIX COLLECTION CENTERS",
-      "buyer": "Meru County Government",
-      "category": "Works",
-      "deadline": "2026-12-03 11:00",
-      "scores": {
-        "capability": 2,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 14,
-      "url": "https://tenders.go.ke/tenders/311131",
-      "source": "ppip",
-      "sector": "ict-digital",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 8,
+      "rank": 5,
       "title": "Provision of Security Guarding Services",
       "buyer": "University of Kabianga",
       "category": "Non Consultancy Services",
@@ -183,7 +126,7 @@
       "buyer_level": "education"
     },
     {
-      "rank": 9,
+      "rank": 6,
       "title": "PROVISION OF AN NTSA-ACCREDITED DRIVING SCHOOL TO TRAIN 600 BODA BODA RIDERS ACROSS ALL 8 SUB-COUNTIES IN KITUI COUNTY",
       "buyer": "Kitui County Government",
       "category": "Non Consultancy Services",
@@ -202,7 +145,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 10,
+      "rank": 7,
       "title": "Development of a National Monitoring Implementation Framework for Satellite and Non-Terresterial Technologies",
       "buyer": "ICT Authority",
       "category": "Consultancy Services",
@@ -221,197 +164,83 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 11,
-      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF THE COUNTY ASSEMBLY",
-      "buyer": "County Assembly Of Kilifi",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/313701",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 12,
-      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR STAFF OF THE COUNTY ASSEMBLY",
-      "buyer": "County Assembly Of Kilifi",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 10:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/313702",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 13,
-      "title": "PROPOSED ADMINISTRATION OF THE KWALE COUNTY BIASHARA REVOLVING FUND",
-      "buyer": "Kwale County Government",
+      "rank": 8,
+      "title": "Tender for the request for proposal on Environmental and Social Impact Assessment (ESIA) consultancy for proposed investments under the Financing Locally-Led Climate Action (FLLoCA) Programme in Nakuru County.",
+      "buyer": "Nakuru County Government",
       "category": "Consultancy Services",
       "deadline": "2026-12-03 10:00",
       "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
+        "capability": 2,
+        "deadline_feasibility": 2,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
       "total": 13,
-      "url": "https://tenders.go.ke/tenders/314938",
+      "url": "https://tenders.go.ke/tenders/314867",
       "source": "ppip",
-      "sector": "other",
+      "sector": "consultancy",
       "buyer_level": "county"
     },
     {
-      "rank": 14,
-      "title": "PROVISION OF PROFESSIONAL INDEMNITY COVER FOR HEALTH WORKERS",
-      "buyer": "Kwale County Government",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 10:30",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/314523",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 15,
-      "title": "FRAMEWORK TENDER FOR LEASING OF MOTORVEHICLES",
-      "buyer": "Judicial Service Commission",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 11:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/313960",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 16,
-      "title": "PROVISION OF STAFF GROUP LIFE INSURANCE COVER",
-      "buyer": "National Social Security Fund",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 11:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/314417",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "national"
-    },
-    {
-      "rank": 17,
-      "title": "PROVISION OF STAFF MEDICAL INSURANCE COVER FOR THE FINANCING LOCALLY-LED CLIMATE ACTION (FLLoCA) PROGRAM FOR YEAR 2026- 2027",
-      "buyer": "The National Treasury",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 11:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/314626",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "national"
-    },
-    {
-      "rank": 18,
-      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF STAFF",
-      "buyer": "County Assembly Of Nakuru",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 11:00",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/315073",
-      "source": "ppip",
-      "sector": "other",
-      "buyer_level": "county"
-    },
-    {
-      "rank": 19,
-      "title": "SUPPLY DELIVERY OF ACTELIC/PIRIMIPHOS METHYL UNDER 2 YEARS FRAMEWORK CONTRACT.",
-      "buyer": "National Cereals and Produce Board",
+      "rank": 9,
+      "title": "Framework Agreement for the supply & delivery of Public Address Systems (PAs)",
+      "buyer": "Nakuru County Government",
       "category": "Goods",
-      "deadline": "2026-12-03 12:00",
+      "deadline": "2026-12-03 10:00",
       "scores": {
-        "capability": 0,
-        "deadline_feasibility": 3,
+        "capability": 2,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/314886",
+      "source": "ppip",
+      "sector": "goods-supplies",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 10,
+      "title": "DESIGN, SUPPLY, DELIVERY, INSTALLATION, TESTING AND COMMISSIONING OF GRID-TIED SOLAR POWER SYSTEM AND CHILLING ACCESSORIES AT MERU CENTRAL DAIRY CO OPERATIVE UNION LTD IN NTIMA EAST WARD, IMENTI NORTH SUBCOUNTY AND SIX COLLECTION CENTERS",
+      "buyer": "Meru County Government",
+      "category": "Works",
+      "deadline": "2026-12-03 11:00",
+      "scores": {
+        "capability": 2,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 13,
+      "url": "https://tenders.go.ke/tenders/311131",
+      "source": "ppip",
+      "sector": "ict-digital",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 11,
+      "title": "PROVISION OF A COMPREHENSIVE MOTOR VEHICLE INSURANCE COVER",
+      "buyer": "MAMA NGINA UNIVERSITY COLLEGE",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 11:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 3
       },
       "total": 13,
-      "url": "https://tenders.go.ke/tenders/313364",
-      "source": "ppip",
-      "sector": "goods-supplies",
-      "buyer_level": "state-corporation"
-    },
-    {
-      "rank": 20,
-      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF STAFF THEIR DEPENDENTS AND UNIVERSITY COUNCIL MEMBERS",
-      "buyer": "Moi University",
-      "category": "Non Consultancy Services",
-      "deadline": "2026-12-03 14:30",
-      "scores": {
-        "capability": 1,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
-        "value": 2,
-        "competition": 2
-      },
-      "total": 13,
-      "url": "https://tenders.go.ke/tenders/314991",
+      "url": "https://tenders.go.ke/tenders/315106",
       "source": "ppip",
       "sector": "other",
       "buyer_level": "education"
     },
     {
-      "rank": 21,
+      "rank": 12,
       "title": "PROPOSED CONSTRUCTION OF OFFICE AT RABONDO CHIEF'S OFFICE",
       "buyer": "AWENDO NGCDF",
       "category": "Works",
@@ -430,7 +259,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 22,
+      "rank": 13,
       "title": "PROPOSED CONSTRUCTION OF OFFICE AT KOGELO CHIEF'S CAMP",
       "buyer": "AWENDO NGCDF",
       "category": "Works",
@@ -449,7 +278,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 23,
+      "rank": 14,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR JUJA MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -468,7 +297,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 24,
+      "rank": 15,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KARURI MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -487,7 +316,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 25,
+      "rank": 16,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KIAMBU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -506,7 +335,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 26,
+      "rank": 17,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR KIKUYU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -525,7 +354,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 27,
+      "rank": 18,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR LIMURU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -544,7 +373,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 28,
+      "rank": 19,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR RUIRU MUNICIPALITY UNDER KENYA URBAN SUPPORT PROGRAM (KUSP II)",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -563,7 +392,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 29,
+      "rank": 20,
       "title": "ADVERTISEMENT FOR THE CONSORTIUM OF CONSULTANCY SERVICES FOR THE PROVISION OF CIVIL/STRUCTURAL ENGINEERING SERVICES, ELECTRICAL ENGINEERING SERVICES, ARCHITECTURAL SERVICES, QUANTITY SURVEYING SERVICES AND MECHANICAL ENGINEERING (BUILDING SERVICES) FOR THIKA MUNICIPAL",
       "buyer": "Kiambu County Government",
       "category": "Consultancy Services",
@@ -582,7 +411,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 30,
+      "rank": 21,
       "title": "PROPOSED CONSTRUCTION OF PERIMETER FENCE, GUARD HOUSE, CABRO WORKS. FRONT CAR PARKING, UNDERGROUND WATER TANK, ELEVATED WATER TOWER, SOLARIZATION AND OTHER AUXILARY WORKS AT HUDUMA JITUME DIGITAL HAB IN LAFEY CONSTITUENCY",
       "buyer": "Mandera County Government",
       "category": "Works",
@@ -601,7 +430,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 31,
+      "rank": 22,
       "title": "COMPREHENSIVE MAINTENANCE OF KISUMU DATA CENTRE SUPPORT INFRASTRUCTURE INCLUDING CLEANING FOR CENTRAL BANK OF KENYA FOR A PERIOD OF THREE (3) YEARS",
       "buyer": "Central Bank of Kenya",
       "category": "Non Consultancy Services",
@@ -620,7 +449,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 32,
+      "rank": 23,
       "title": "CONSULTANCY SERVICES FOR VARIOUS-K-WASH PROJECTS",
       "buyer": "Bomet County Government",
       "category": "Consultancy Services",
@@ -639,7 +468,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 33,
+      "rank": 24,
       "title": "PROVISION OF STATUTORY OCCUPATIONAL SAFETY AND HEALTH (OSH) MEDICAL EXAMINATION",
       "buyer": "Kenya Power & Lighting Company",
       "category": "Non Consultancy Services",
@@ -658,7 +487,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 34,
+      "rank": 25,
       "title": "Construction of 45 Capacity Science Laboratory at Dr. Adhuu Awiti Secondary School",
       "buyer": "KARACHUONYO NG-CDF",
       "category": "Works",
@@ -677,7 +506,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 35,
+      "rank": 26,
       "title": "Construction of Five Roomed Administration Block at Omindi Secondary School",
       "buyer": "KARACHUONYO NG-CDF",
       "category": "Works",
@@ -696,7 +525,7 @@
       "buyer_level": "ngcdf"
     },
     {
-      "rank": 36,
+      "rank": 27,
       "title": "PROVISION OF LIFTS, CONVEYOR AND ESCALATOR STATUTORY INSPECTION SERVICES",
       "buyer": "Kenya Ports Authority",
       "category": "Non Consultancy Services",
@@ -715,7 +544,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 37,
+      "rank": 28,
       "title": "PROVISION OF LIFTS, CONVEYOR AND ESCALATOR MAINTENANCE SERVICES",
       "buyer": "Kenya Ports Authority",
       "category": "Non Consultancy Services",
@@ -734,7 +563,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 38,
+      "rank": 29,
       "title": "Provision of hotel, accommodation and conference services",
       "buyer": "Coast General Teaching and Referral Hospital",
       "category": "Non Consultancy Services",
@@ -753,7 +582,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 39,
+      "rank": 30,
       "title": "Provision of general service and maintenance of motor vehicles and generators",
       "buyer": "Coast General Teaching and Referral Hospital",
       "category": "Non Consultancy Services",
@@ -772,7 +601,7 @@
       "buyer_level": "state-corporation"
     },
     {
-      "rank": 40,
+      "rank": 31,
       "title": "PROVISION OF MOTOR VEHICLE INSURANCE COVER FOR THE FINANCIAL YEAR 2026-2027",
       "buyer": "County Assembly Of Nyeri",
       "category": "Non Consultancy Services",
@@ -791,7 +620,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 41,
+      "rank": 32,
       "title": "Procurement Of Air Conditioning (AC) Units and Ceiling Fans , Installation, Testing & Commissioning for various Company Facilities",
       "buyer": "Kenya Power & Lighting Company",
       "category": "Non Consultancy Services",
@@ -810,7 +639,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 42,
+      "rank": 33,
       "title": "FLIGHT TICKET TO KISUMU FOR CHAIRMAN AND MHCA TO ATTEND HOPS SEMINAR",
       "buyer": "Anti - Doping Agency of Kenya",
       "category": "Non Consultancy Services",
@@ -829,7 +658,7 @@
       "buyer_level": "other"
     },
     {
-      "rank": 43,
+      "rank": 34,
       "title": "PROPOSED IMPROVEMENT OF GOOD HOPE (TOWN CLOCK) GO DOWN ROAD AND PROPOSED IMPROVEMENT OF GACHANA ROAD IN NYAHURURU TOWN",
       "buyer": "Laikipia County Government",
       "category": "Works",
@@ -848,7 +677,7 @@
       "buyer_level": "county"
     },
     {
-      "rank": 44,
+      "rank": 35,
       "title": "PROPOSED IMPROVEMENT OF RAILWAY JEMROAN ROAD IN NANYUKI TOWN, LAIKIPIA COUNTY",
       "buyer": "Laikipia County Government",
       "category": "Works",
@@ -867,127 +696,298 @@
       "buyer_level": "county"
     },
     {
-      "rank": 45,
-      "title": "Supply of Tools, Equipment and Instruments for Commercial Services & Technical Audit",
-      "buyer": "Kenya Power & Lighting Company",
-      "category": "Goods",
+      "rank": 36,
+      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF THE COUNTY ASSEMBLY",
+      "buyer": "County Assembly Of Kilifi",
+      "category": "Non Consultancy Services",
       "deadline": "2026-12-03 10:00",
       "scores": {
-        "capability": 0,
-        "deadline_feasibility": 3,
+        "capability": 1,
+        "deadline_feasibility": 2,
         "buyer_credibility": 5,
         "value": 2,
         "competition": 2
       },
       "total": 12,
-      "url": "https://tenders.go.ke/tenders/314714",
+      "url": "https://tenders.go.ke/tenders/313701",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 37,
+      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR STAFF OF THE COUNTY ASSEMBLY",
+      "buyer": "County Assembly Of Kilifi",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 10:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/313702",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 38,
+      "title": "PROPOSED ADMINISTRATION OF THE KWALE COUNTY BIASHARA REVOLVING FUND",
+      "buyer": "Kwale County Government",
+      "category": "Consultancy Services",
+      "deadline": "2026-12-03 10:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/314938",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 39,
+      "title": "PROVISION OF PROFESSIONAL INDEMNITY COVER FOR HEALTH WORKERS",
+      "buyer": "Kwale County Government",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 10:30",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/314523",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 40,
+      "title": "FRAMEWORK TENDER FOR LEASING OF MOTORVEHICLES",
+      "buyer": "Judicial Service Commission",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 11:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/313960",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "state-corporation"
+    },
+    {
+      "rank": 41,
+      "title": "PROVISION OF STAFF GROUP LIFE INSURANCE COVER",
+      "buyer": "National Social Security Fund",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 11:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/314417",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "national"
+    },
+    {
+      "rank": 42,
+      "title": "PROVISION OF STAFF MEDICAL INSURANCE COVER FOR THE FINANCING LOCALLY-LED CLIMATE ACTION (FLLoCA) PROGRAM FOR YEAR 2026- 2027",
+      "buyer": "The National Treasury",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 11:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/314626",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "national"
+    },
+    {
+      "rank": 43,
+      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF STAFF",
+      "buyer": "County Assembly Of Nakuru",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 11:00",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/315073",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "county"
+    },
+    {
+      "rank": 44,
+      "title": "SUPPLY DELIVERY OF ACTELIC/PIRIMIPHOS METHYL UNDER 2 YEARS FRAMEWORK CONTRACT.",
+      "buyer": "National Cereals and Produce Board",
+      "category": "Goods",
+      "deadline": "2026-12-03 12:00",
+      "scores": {
+        "capability": 0,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 3
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/313364",
       "source": "ppip",
       "sector": "goods-supplies",
-      "buyer_level": "other"
+      "buyer_level": "state-corporation"
+    },
+    {
+      "rank": 45,
+      "title": "PROVISION OF MEDICAL INSURANCE COVER FOR MEMBERS OF STAFF THEIR DEPENDENTS AND UNIVERSITY COUNCIL MEMBERS",
+      "buyer": "Moi University",
+      "category": "Non Consultancy Services",
+      "deadline": "2026-12-03 14:30",
+      "scores": {
+        "capability": 1,
+        "deadline_feasibility": 2,
+        "buyer_credibility": 5,
+        "value": 2,
+        "competition": 2
+      },
+      "total": 12,
+      "url": "https://tenders.go.ke/tenders/314991",
+      "source": "ppip",
+      "sector": "other",
+      "buyer_level": "education"
     },
     {
       "rank": 46,
-      "title": "Framework Agreement for the stitching, fabrication supply & delivery of 50 and 100 seater tents.",
-      "buyer": "Nakuru County Government",
+      "title": "PROPOSED PURCHASE OF FORTY-SIX (46) SEATER SEMI-LUXURY KMTC BUS FOR KEGONGA KENYA MEDICAL TRAINING COLLEGE IN KURIA EAST CONSTITUENCY",
+      "buyer": "KURIA EAST NG-CDF",
       "category": "Goods",
-      "deadline": "2026-12-03 10:00",
+      "deadline": "2026-11-27 10:00",
       "scores": {
         "capability": 0,
-        "deadline_feasibility": 3,
+        "deadline_feasibility": 1,
         "buyer_credibility": 5,
         "value": 2,
-        "competition": 2
+        "competition": 3
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/314868",
+      "total": 11,
+      "url": "https://tenders.go.ke/tenders/312362",
       "source": "ppip",
-      "sector": "goods-supplies",
-      "buyer_level": "county"
+      "sector": "training-capacity",
+      "buyer_level": "ngcdf"
     },
     {
       "rank": 47,
-      "title": "Framework Agreement for the supply & delivery of motorbikes",
-      "buyer": "Nakuru County Government",
-      "category": "Goods",
-      "deadline": "2026-12-03 10:00",
+      "title": "SUPPLY, DELVERY, INSTALLATION, TESTING, TRAINING AND COMMISSIONING OF SMART WATER METERS",
+      "buyer": "Kiambere-Mwingi Water and Sanitation Company",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
       "scores": {
-        "capability": 0,
-        "deadline_feasibility": 3,
-        "buyer_credibility": 5,
+        "capability": 2,
+        "deadline_feasibility": 1,
+        "buyer_credibility": 4,
         "value": 2,
         "competition": 2
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/314869",
+      "total": 11,
+      "url": "https://tenders.go.ke/tenders/312679",
       "source": "ppip",
-      "sector": "goods-supplies",
-      "buyer_level": "county"
+      "sector": "training-capacity",
+      "buyer_level": "other"
     },
     {
       "rank": 48,
-      "title": "Framework Agreement for the supply & delivery of market and motorbikes umbrellas",
-      "buyer": "Nakuru County Government",
-      "category": "Goods",
-      "deadline": "2026-12-03 10:00",
+      "title": "Purchase of a 51 seater school bus",
+      "buyer": "Subukia NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
       "scores": {
         "capability": 0,
-        "deadline_feasibility": 3,
+        "deadline_feasibility": 1,
         "buyer_credibility": 5,
         "value": 2,
-        "competition": 2
+        "competition": 3
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/314870",
+      "total": 11,
+      "url": "https://tenders.go.ke/tenders/312810",
       "source": "ppip",
       "sector": "goods-supplies",
-      "buyer_level": "county"
+      "buyer_level": "ngcdf"
     },
     {
       "rank": 49,
-      "title": "Framework Agreement for the supply & delivery of LPG cylinders.",
-      "buyer": "Nakuru County Government",
-      "category": "Goods",
-      "deadline": "2026-12-03 10:00",
+      "title": "Purchase of a 51-seater school bus",
+      "buyer": "Subukia NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
       "scores": {
         "capability": 0,
-        "deadline_feasibility": 3,
+        "deadline_feasibility": 1,
         "buyer_credibility": 5,
         "value": 2,
-        "competition": 2
+        "competition": 3
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/314872",
+      "total": 11,
+      "url": "https://tenders.go.ke/tenders/312812",
       "source": "ppip",
       "sector": "goods-supplies",
-      "buyer_level": "county"
+      "buyer_level": "ngcdf"
     },
     {
       "rank": 50,
-      "title": "Framework Agreement for the supply & delivery of smart TV’s, play stations, video cameras, photo cameras and other accessories.",
-      "buyer": "Nakuru County Government",
-      "category": "Goods",
-      "deadline": "2026-12-03 10:00",
+      "title": "Purchase of a 51-seater school bus",
+      "buyer": "Subukia NG-CDF",
+      "category": "Works",
+      "deadline": "2026-11-27 10:00",
       "scores": {
-        "capability": 2,
-        "deadline_feasibility": 3,
+        "capability": 0,
+        "deadline_feasibility": 1,
         "buyer_credibility": 5,
         "value": 2,
-        "competition": 0
+        "competition": 3
       },
-      "total": 12,
-      "url": "https://tenders.go.ke/tenders/314874",
+      "total": 11,
+      "url": "https://tenders.go.ke/tenders/312813",
       "source": "ppip",
       "sector": "goods-supplies",
-      "buyer_level": "county"
+      "buyer_level": "ngcdf"
     }
   ],
   "top_picks": [
     {
-      "rank": 1,
+      "rank": 3,
       "title": "REQUEST FOR PROVISION OF CONSULTANCY SERVICES FOR INTERNATIONAL FINANCIAL REPROTING STANDARDS (IFRS) TECHNICAL REVIEW AND CYBERSECURITY AUDIT",
       "buyer": "Central Bank of Kenya",
       "deadline": "2026-12-03 10:30",
-      "total": 15,
+      "total": 14,
       "url": "https://tenders.go.ke/tenders/311089",
       "draft": {
         "company_profile": "**GashoTech** — Nairobi, Kenya. AI, automation, cybersecurity and web/software\nengineering company.\n\n- Capabilities: custom software & web platforms, AI/ML solutions and\n  integrations, cybersecurity services (assessment, hardening, monitoring),\n  process automation, IT support and maintenance.\n- Delivery model: local team, agile sprints, documented handover, post-delivery\n  support.\n- [ ] Confirm current registration details (AGPO/PPRA, tax compliance, KRA PIN,\n  business registration) before submission — attach certificates.\n- [ ] Attach company profile document (PDF) and 2-3 reference letters.\n\n> TODO(human): paste the official registered company profile text here.",
@@ -997,11 +997,11 @@
       }
     },
     {
-      "rank": 2,
+      "rank": 4,
       "title": "PROVISION OF MOBILE APPLICATION MAINTENANCE AND SUPPORT SERVICES",
       "buyer": "Kenya Ports Authority",
       "deadline": "2026-12-03 22:00",
-      "total": 15,
+      "total": 14,
       "url": "https://tenders.go.ke/tenders/313566",
       "draft": {
         "company_profile": "**GashoTech** — Nairobi, Kenya. AI, automation, cybersecurity and web/software\nengineering company.\n\n- Capabilities: custom software & web platforms, AI/ML solutions and\n  integrations, cybersecurity services (assessment, hardening, monitoring),\n  process automation, IT support and maintenance.\n- Delivery model: local team, agile sprints, documented handover, post-delivery\n  support.\n- [ ] Confirm current registration details (AGPO/PPRA, tax compliance, KRA PIN,\n  business registration) before submission — attach certificates.\n- [ ] Attach company profile document (PDF) and 2-3 reference letters.\n\n> TODO(human): paste the official registered company profile text here.",
