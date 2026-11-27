@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-27T03:01:55+03:00",
+  "generated_at": "2026-11-27T06:01:49+03:00",
   "generator": "tender-finder",
   "run": {
-    "elapsed_seconds": 113.8,
-    "http_requests": 4,
+    "elapsed_seconds": 107.5,
+    "http_requests": 40,
     "records_scored": 300,
     "records_excluded": 16,
-    "budget_status": "within cap (elapsed 114s < 600s)"
+    "budget_status": "within cap (elapsed 108s < 600s)"
   },
   "source_health": [
     {
       "source": "PPIP / tenders.go.ke (national portal API)",
       "status": "ok",
       "records": 300,
-      "detail": "fetched 30 page(s) of 480 active tenders (300 records parsed)"
+      "detail": "fetched 30 page(s) of 483 active tenders (300 records parsed)"
     },
     {
       "source": "County portals (WordPress REST: Kisumu, Kajiado)",
@@ -26,7 +26,7 @@
       "source": "Kenya Gazette (kenyalaw.org archive)",
       "status": "failed",
       "records": 0,
-      "detail": "gazette index fetch failed (FetchError: failed after 3 attempt(s): https://kenyalaw.org/gazettes/ (<urlopen error [Errno -3] Temporary failure in name resolution>))"
+      "detail": "gazette index fetch failed (FetchError: disallowed by robots.txt: https://kenyalaw.org/gazettes/)"
     }
   ],
   "tenders": [
